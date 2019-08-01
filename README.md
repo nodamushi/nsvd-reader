@@ -1,6 +1,6 @@
-# CMSIS5-SVD Parser 
+# NSVD Reader
 
-C++ Header only [CMSIS5 SVD](http://www.keil.com/pack/doc/CMSIS/SVD/html/index.html) library.
+C++ Header only [CMSIS5 SVD](http://www.keil.com/pack/doc/CMSIS/SVD/html/index.html) read library.
 
 This is an unofficial library.
 

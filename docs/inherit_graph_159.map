@@ -1,0 +1,10 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="node1" href="$structnodamushi_1_1svd_1_1svd__reader.html" title=" " alt="" coords="5,169,144,211"/>
+<area shape="rect" id="node2" href="$structnodamushi_1_1svd_1_1boost__svd__reader.html" title="SVD reader with Boost property tree." alt="" coords="213,5,365,47"/>
+<area shape="rect" id="node3" href="$structnodamushi_1_1svd_1_1stream__reader__base.html" title="svd_reader base class for stream type parser subclasses must be implements read method and is_end met..." alt="" coords="199,71,379,112"/>
+<area shape="rect" id="node4" href="$structnodamushi_1_1svd_1_1stream__reader__element.html" title="XML element class for stream type parser." alt="" coords="192,136,387,177"/>
+<area shape="rect" id="node5" href="$structnodamushi_1_1svd_1_1tinyxml__svd__reader.html" title=" " alt="" coords="208,201,371,243"/>
+<area shape="rect" id="node6" href="$structnodamushi_1_1svd_1_1tinyxml__svd__reader_1_1sub__reader.html" title=" " alt="" coords="208,267,371,308"/>
+<area shape="rect" id="node7" href="$structnodamushi_1_1svd_1_1stream__reader__base.html" title=" " alt="" coords="204,333,375,389"/>
+<area shape="rect" id="node8" href="$structnodamushi_1_1svd_1_1expat__svd__reader.html" title="SVD reader with Expat(https://github.com/libexpat/libexpat)" alt="" coords="435,340,587,381"/>
+</map>

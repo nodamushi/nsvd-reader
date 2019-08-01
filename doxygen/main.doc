@@ -1,0 +1,170 @@
+/**
+
+ @mainpage CMSIS5-SVD Reader
+
+C++ Header only [CMSIS5 SVD](http://www.keil.com/pack/doc/CMSIS/SVD/html/index.html) read library.
+
+This is an unofficial library.
+
+[TOC]
+
+<hr>
+
+# read How to read svd file
+
+@par
+ include 
+
+@code
+#include "nodamushi/svd.hpp"
+
+// select xml reader
+#include "nodamushi/svd/boost.hpp"
+#include "nodamushi/svd/expat.hpp"
+#include "nodamushi/svd/tinyxml.hpp"
+@endcode
+
+@par
+ read
+
+@code
+namespace svd=nodamushi::svd;
+svd::boost_svd_reader svd_reader(file_name);
+svd::Device<> device(svd_reader);
+@endcode
+
+@see nodamushi::svd::Device
+@see nodamushi::svd::Cpu
+@see nodamushi::svd::Peripheral
+@see nodamushi::svd::Register
+@see nodamushi::svd::Field
+@see nodamushi::svd::Cluster
+@see nodamushi::svd::boost_svd_reader
+@see nodamushi::svd::expat_svd_reader
+@see nodamushi::svd::tinyxml_svd_reader
+
+<hr>
+
+# How to resolve 'derivedFrom' attributes
+
+@par 
+
+add include file.
+
+@code
+#include "nodamushi/svd/normalize.hpp"
+@endcode
+
+@par
+
+code
+
+@code
+//* device is nodamushi::svd::Device
+//* namespace svd = nodamushi::svd;
+
+auto dptr = svd::normalize(device);
+@endcode
+
+
+@see nodamushi::svd::normalized::Device
+@see nodamushi::svd::normalized::Cpu
+@see nodamushi::svd::normalized::Peripheral
+@see nodamushi::svd::normalized::Register
+@see nodamushi::svd::normalized::Field
+@see nodamushi::svd::normalized::Cluster
+
+<hr>
+# How to use visitor pattern.
+
+TODO: document
+
+see 'sample/visitor_sample.cpp'.
+
+
+<hr>
+
+# Sample code
+
+
+
+@code
+#include <string>
+#include <iostream>
+
+#include "nodamushi/svd.hpp"
+#include "nodamushi/svd/normalize.hpp"
+
+// select xml reader
+#include "nodamushi/svd/boost.hpp"
+//#include "nodamushi/svd/expat.hpp"
+//#include "nodamushi/svd/tinyxml.hpp"
+
+// visitor pattern
+struct visitor
+{
+  using this_t =  visitor;
+#undef  VISITOR_MEMBER
+#define VISITOR_MEMBER
+  SVD_VISITOR_INIT;
+  //-------------------------------
+  SVD_Visit_Interrupt(i)
+  {
+    if(i.name && i.value)
+      std::cout << "interrupt:" <<*i.name << "," << *i.value<<std::endl;
+    return result::CONTINUE;
+  }
+
+  SVD_Visit_Register(r)
+  {
+    count_register++;
+    return result::CONTINUE;
+  }
+  
+  int count_register=0;
+};
+
+
+int main(int argc,char** argv)
+{
+  std::string filename = argv[1];
+  
+  // read svd
+  namespace svd=nodamushi::svd;
+  svd::boost_svd_reader svd(filename);
+  svd::Device<> device(svd);
+  
+  // edit data
+  device.vendor = "Foo Bar.inc";
+  device.description = "Foo Bar";
+  
+  // print SVD(xml)
+  std::cout << device << std::endl;
+
+  // get cpu name
+  if(device.cpu && device.cpu->name){
+    std::cout <<"Device CPU:"<< device.cpu->name.get() << std::endl;
+  }else{
+    std::cout << "Device CPU is not defined" << std::endl;
+  }
+  
+  // use visitor pattern
+  visitor v;
+  visitor::accept(device,v);
+  
+  // normalize (resovle 'derivedFrom')
+  namespace norm =nodamushi::svd::normalized;
+  auto dptr = svd::normalize(device);
+  // dptr is std::shared_ptr<norm::Device<std::string/std::string_view>>
+
+  if(auto p = dptr->find_peripheral("UART2")){
+    for(auto& r:p->registers){
+      std::cout << "UART2 Register:" 
+                << r.name << ","
+                << r.get_address() << std::endl;
+    }
+  }
+}
+@endcode
+
+ */

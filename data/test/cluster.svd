@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<device schemaVersion="1.1" xmlns:xs="http://www.w3.org/2001/XMLSchema-instance" xs:noNamespaceSchemaLocation="CMSIS-SVD.xsd" >
+  <vendor>CC0</vendor>
+  <vendorID>CC0</vendorID>
+  <name>cluster</name>
+  <description>foobar</description>
+  <cpu>
+    <name>CM4</name>
+    <revision>r1p0</revision>
+    <endian>little</endian>
+    <mpuPresent>true</mpuPresent>
+    <fpuPresent>false</fpuPresent>
+    <nvicPrioBits>3</nvicPrioBits>
+    <vendorSystickConfig>false</vendorSystickConfig>
+  </cpu>
+  <addressUnitBits>8</addressUnitBits>
+  <width>0x20</width>
+  <size>0x20</size>
+  <access>read-write</access>
+  <resetValue>1</resetValue>
+  <resetMask>0xFFFFFFFF</resetMask>
+  
+  
+  <!--
+
+p:A -c:B - r:X
+           r:Y
+           r:Z
+     c:C - r:X
+           r:Z
+     c:D - r:N
+           c:C -r:X
+                r:Z
+p:B-c:D-r:N
+        c:C -r:X
+             r:Z
+  -->
+  
+  <peripherals>
+    <peripheral>
+      <name>A</name>
+      <baseAddress>0x1000</baseAddress>
+      <size>0x20</size>
+      <access>read-only</access>
+
+      <addressBlock>
+        <offset>0</offset>
+        <size>0x1000</size>
+        <usage>registers</usage>
+      </addressBlock>
+      
+      <registers>
+        <cluster derivedFrom="C">
+          <name>B</name>
+          <addressOffset>0</addressOffset>
+          <register>
+            <name>Y</name>
+            <addressOffset>0x4</addressOffset>
+          </register>
+        </cluster>
+
+        <cluster>
+          <name>C</name>
+          <addressOffset>400</addressOffset>
+
+          <register>
+            <name>X</name>
+            <addressOffset>0x0</addressOffset>
+          </register>
+          <register>
+            <name>Z</name>
+            <addressOffset>0x8</addressOffset>
+          </register>
+
+        </cluster>
+        
+        <cluster derivedFrom="B.D">
+          <name>D</name>
+          <addressOffset>100</addressOffset>
+          <resetMask>100</resetMask>
+        </cluster>
+        
+      </registers>
+      
+    </peripheral>
+
+    <peripheral>
+      <name>B</name>
+      <baseAddress>0x2000</baseAddress>
+      <size>0x20</size>
+      <access>read-write</access>
+      
+      <addressBlock>
+        <offset>0</offset>
+        <size>0x1000</size>
+        <usage>registers</usage>
+      </addressBlock>
+      
+      <registers>
+        <cluster>
+          <name>D</name>
+          <addressOffset>0</addressOffset>
+          <resetMask>300</resetMask>
+          <register>
+            <name>N</name>
+            <addressOffset>0</addressOffset>
+          </register>
+          <cluster>
+            <name>C</name>
+            <addressOffset>0xC8</addressOffset>
+            <protection>p</protection>
+            <register>
+              <name>X</name>
+              <addressOffset>12</addressOffset>
+            </register>
+            <register>
+              <name>Z</name>
+              <addressOffset>0x4</addressOffset>
+            </register>
+          </cluster>
+        </cluster>
+      </registers>
+
+    </peripheral>
+    
+  </peripherals>
+</device>
+
+        

@@ -1,0 +1,10 @@
+var searchData=
+[
+  ['r',['R',['../structnodamushi_1_1svd_1_1normalized_1_1normalizer.html#a8303fb7ab8640ebfd5642b7f8aa88052',1,'nodamushi::svd::normalized::normalizer']]],
+  ['rc_5ft',['rc_t',['../structnodamushi_1_1svd_1_1_registers.html#ad1fbfca6db9efa5c0cd1f49b48106167',1,'nodamushi::svd::Registers::rc_t()'],['../structnodamushi_1_1svd_1_1_cluster.html#abd43ad685905986b5bb47f67c740e233',1,'nodamushi::svd::Cluster::rc_t()']]],
+  ['reference',['reference',['../classnodamushi_1_1boxvec.html#a476e733872e7a2f3e6c2e90993197651',1,'nodamushi::boxvec']]],
+  ['reg_5ft',['reg_t',['../structnodamushi_1_1svd_1_1_registers.html#aa6c8ebb996276dc8b3d28df8caf508df',1,'nodamushi::svd::Registers::reg_t()'],['../structnodamushi_1_1svd_1_1_cluster.html#ac73f970465f6e16148975d15d32ce4aa',1,'nodamushi::svd::Cluster::reg_t()'],['../structnodamushi_1_1svd_1_1reg__or__cluster.html#ade276cbe7f835e3b68f2b3c705e7e6cc',1,'nodamushi::svd::reg_or_cluster::reg_t()']]],
+  ['register',['Register',['../structnodamushi_1_1svd_1_1normalized_1_1_cluster.html#a624e3275010bf8d47bef92f02419746a',1,'nodamushi::svd::normalized::Cluster::Register()'],['../structnodamushi_1_1svd_1_1normalized_1_1_device.html#a5e530c7d507f6de34c3379ac3337561b',1,'nodamushi::svd::normalized::Device::Register()'],['../structnodamushi_1_1svd_1_1normalized_1_1_field.html#a831aa0509d901e35179025a2bcb5578f',1,'nodamushi::svd::normalized::Field::Register()'],['../structnodamushi_1_1svd_1_1normalized_1_1_peripheral.html#aba6b76aa931464ef939856685518d6cb',1,'nodamushi::svd::normalized::Peripheral::Register()']]],
+  ['result',['result',['../structnodamushi_1_1svd_1_1normalized_1_1normvisitor.html#ae97f128b63d2a903ce40b787f327b183',1,'nodamushi::svd::normalized::normvisitor::result()'],['../structnodamushi_1_1svd_1_1svdvisitor.html#ac8947e53dc2c9ad0b126a2d19551ab21',1,'nodamushi::svd::svdvisitor::result()']]],
+  ['reverse_5fiterator',['reverse_iterator',['../classnodamushi_1_1boxvec.html#a1492b34883827b5507db0b0b4c2e8db0',1,'nodamushi::boxvec']]]
+];

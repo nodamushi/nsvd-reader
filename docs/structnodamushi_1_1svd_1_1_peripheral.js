@@ -1,0 +1,27 @@
+var structnodamushi_1_1svd_1_1_peripheral =
+[
+    [ "access", "structnodamushi_1_1svd_1_1_peripheral.html#a8874691c69bd52c0849b96faa493aa81", null ],
+    [ "addressBlock", "structnodamushi_1_1svd_1_1_peripheral.html#a7a66277435d9316965805a51a5c19c12", null ],
+    [ "alternatePeripheral", "structnodamushi_1_1svd_1_1_peripheral.html#a6605e95c1d165cb9efeb455edb4fb744", null ],
+    [ "appendToName", "structnodamushi_1_1svd_1_1_peripheral.html#ae32b8221c4a6c3ae4367e62f70203b0a", null ],
+    [ "baseAddress", "structnodamushi_1_1svd_1_1_peripheral.html#a86612ee85471d3e83c75b4a74dbdc7b2", null ],
+    [ "derivedFrom", "structnodamushi_1_1svd_1_1_peripheral.html#a2d8715bc18eb09d8864d36073e229f84", null ],
+    [ "description", "structnodamushi_1_1svd_1_1_peripheral.html#a92c150dfbd9fb79c3266934052b200c6", null ],
+    [ "dim", "structnodamushi_1_1svd_1_1_peripheral.html#a36e5b860e9b9ed40f9bde7367a7d0cb1", null ],
+    [ "dimArrayIndex", "structnodamushi_1_1svd_1_1_peripheral.html#aa10be1f5a09579d374bc24720f66f210", null ],
+    [ "dimIncrement", "structnodamushi_1_1svd_1_1_peripheral.html#a352246a8a7714f88eb6d6e9271552788", null ],
+    [ "dimIndex", "structnodamushi_1_1svd_1_1_peripheral.html#ac7052782d74bcca88764fd5acd6fb442", null ],
+    [ "dimName", "structnodamushi_1_1svd_1_1_peripheral.html#af93f6b42aad338ff99faae772446676c", null ],
+    [ "disableCondition", "structnodamushi_1_1svd_1_1_peripheral.html#ababa4e9c338157e3a76bddea2ea88e55", null ],
+    [ "groupName", "structnodamushi_1_1svd_1_1_peripheral.html#a15048012a07d642de4757bb3f9a9338f", null ],
+    [ "headerStructName", "structnodamushi_1_1svd_1_1_peripheral.html#a6bf1532ddf325a0771214363424ec6d4", null ],
+    [ "interrupt", "structnodamushi_1_1svd_1_1_peripheral.html#a25129d13558a9e37c229958a5e4bdd52", null ],
+    [ "name", "structnodamushi_1_1svd_1_1_peripheral.html#a2cd3e0febd89b8541e41a89c4214eff1", null ],
+    [ "prependToName", "structnodamushi_1_1svd_1_1_peripheral.html#a208cc35b6288f9783821d0fb6fee2443", null ],
+    [ "protection", "structnodamushi_1_1svd_1_1_peripheral.html#a13db4ba6f1bcbe5eda8743eb3810e0f8", null ],
+    [ "registers", "structnodamushi_1_1svd_1_1_peripheral.html#a9098df8d3bce511142f3743caa461d19", null ],
+    [ "resetMask", "structnodamushi_1_1svd_1_1_peripheral.html#a3b1a15cb9d8595044df8e0acc2fed150", null ],
+    [ "resetValue", "structnodamushi_1_1svd_1_1_peripheral.html#ac955ca364c3463ffbeced0b88cee8321", null ],
+    [ "size", "structnodamushi_1_1svd_1_1_peripheral.html#a5a4df960c98c0e300d54e939a3cbb7bf", null ],
+    [ "version", "structnodamushi_1_1svd_1_1_peripheral.html#ac18399dfa48ed4548d26062019446167", null ]
+];
