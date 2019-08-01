@@ -1,0 +1,7 @@
+.tmp/
+.ccls-cache/
+*.exe
+compile_commands.json
+bin/
+release/
+debug/
