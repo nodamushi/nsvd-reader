@@ -98,7 +98,7 @@ template<>struct enum_helper<SAURegionConfigProtect>
 
 
 namespace std{
-ostream& operator <<(std::ostream& os,const ::nodamushi::svd::SAURegionConfigProtect& value)
+inline ostream& operator <<(std::ostream& os,const ::nodamushi::svd::SAURegionConfigProtect& value)
 {
   os << ::nodamushi::svd::enum_helper<::nodamushi::svd::SAURegionConfigProtect>::nameof(value);
   return os;

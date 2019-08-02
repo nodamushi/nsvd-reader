@@ -17,6 +17,7 @@
 #define __NODAMUSHI_SVD_EXPAT_HPP__
 
 # include "nodamushi/svd/svd_reader.hpp"
+# include "nodamushi/svd/svd_reader_stream_helper.hpp"
 # include <expat.h>
 # include <cstdio> 
 namespace nodamushi{

@@ -125,7 +125,7 @@ template<>struct enum_helper<ReadAction>
 }}// end namespace nodamushi::svd
 
 namespace std{
-ostream& operator <<(ostream& os,const ::nodamushi::svd::ReadAction& value)
+inline ostream& operator <<(ostream& os,const ::nodamushi::svd::ReadAction& value)
 {
   if(value == ::nodamushi::svd::ReadAction::NO_ACTION){
     os << "no action";

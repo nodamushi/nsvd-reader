@@ -9,21 +9,7 @@
 #ifndef __NODAMUSHI_SVD_DEVICE_HPP__
 #define __NODAMUSHI_SVD_DEVICE_HPP__
 
-# include <ostream>
-# include "nodamushi/svd/node.hpp"
-
-# include "nodamushi/svd/Access.hpp"
-# include "nodamushi/svd/Peripheral.hpp"
-# include "nodamushi/svd/Cpu.hpp"
-
-# include "nodamushi/svd/create.hpp"
-# include "nodamushi/const_string.hpp"
-# include "nodamushi/svd/svd_printer.hpp"
-# include "nodamushi/svd/Protection.hpp"
-# include "nodamushi/svd/value.hpp"
-# include "nodamushi/svd/svdvisitor.hpp"
-
-# include "nodamushi/svd/normalized/Device.hpp"
+# include "nodamushi/svd/elements.hpp"
 
 namespace nodamushi{
 namespace svd{
@@ -226,8 +212,11 @@ bool create(SVD& svd,Device<STR,VendorExtensions>& d)
     }else if(c.is_attribute()){
       create(c,d);
     }
+    else{
+      c.unknown_element(svd_element::Device);
+    }
     if(!t){
-      //TODO error
+      c.illegal_value(svd_element::Device);
     }
   }
   return true;

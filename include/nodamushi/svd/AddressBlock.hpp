@@ -9,17 +9,8 @@
 #ifndef __NODAMUSHI_SVD_ADDRESSBLOCK_HPP__
 #define __NODAMUSHI_SVD_ADDRESSBLOCK_HPP__
 
-# include <ostream>
-# include "nodamushi/svd/node.hpp"
+# include "nodamushi/svd/elements.hpp"
 
-# include "nodamushi/svd/AddressBlockUsage.hpp"
-
-# include "nodamushi/svd/create.hpp"
-# include "nodamushi/const_string.hpp"
-# include "nodamushi/svd/svd_printer.hpp"
-
-# include "nodamushi/svd/value.hpp"
-# include "nodamushi/svd/Protection.hpp"
 namespace nodamushi{
 namespace svd{
 
@@ -55,9 +46,9 @@ template<typename SVD>bool create(SVD& svd,AddressBlock& d)
     else if(n == "size")t = (d.size = c);
     else if(n == "usage")t = (d.usage = c);
     else if(n == "protection")t = (d.protection = c);
-    
+    else c.unknown_element(svd_element::AddressBlock);
     if(!t){
-      //TODO error
+      c.illegal_value(svd_element::AddressBlock);
     }
   }
   return true;

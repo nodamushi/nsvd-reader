@@ -9,18 +9,7 @@
 #ifndef __NODAMUSHI_SVD_DIMARRAYINDEX_HPP__
 #define __NODAMUSHI_SVD_DIMARRAYINDEX_HPP__
 
-
-# include <ostream>
-# include <vector>
-# include "nodamushi/svd/node.hpp"
-
-# include "nodamushi/svd/EnumeratedValue.hpp"
-
-# include "nodamushi/svd/create.hpp"
-# include "nodamushi/const_string.hpp"
-# include "nodamushi/svd/svd_printer.hpp"
-
-# include "nodamushi/svd/value.hpp"
+# include "nodamushi/svd/elements.hpp"
 
 namespace nodamushi{
 namespace svd{
@@ -55,8 +44,9 @@ bool create(SVD& svd,DimArrayIndex<STR>& d)
       EnumeratedValue<STR>& ev = v[i];
       create(c,ev);
     }
+    else c.unknown_element(svd_element::DimArrayIndex);
     if(!t){
-      //TODO error
+      c.illegal_value(svd_element::DimArrayIndex);
     }
   }
   return true;

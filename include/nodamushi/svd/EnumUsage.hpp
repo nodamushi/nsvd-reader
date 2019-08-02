@@ -106,7 +106,7 @@ template<>struct enum_helper<EnumUsage>
 }
 }// end namespace nodamushi
 namespace std{
-ostream& operator <<(ostream& os,const ::nodamushi::svd::EnumUsage& value)
+inline ostream& operator <<(ostream& os,const ::nodamushi::svd::EnumUsage& value)
 {
   os << ::nodamushi::svd::enum_helper<::nodamushi::svd::EnumUsage>::nameof(value);
   return os;

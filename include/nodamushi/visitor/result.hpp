@@ -28,7 +28,7 @@ enum class result
 
 #include <ostream>
 namespace std{
-std::ostream& operator<<(std::ostream& out,const nodamushi::visitor::result& r)
+inline std::ostream& operator<<(std::ostream& out,const nodamushi::visitor::result& r)
 {
   using namespace nodamushi::visitor;
   switch(r){

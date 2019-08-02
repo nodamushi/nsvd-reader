@@ -301,7 +301,7 @@ template<>struct value_setter_helper<dimIndex>
 
 
 namespace std{
-ostream& operator <<(ostream& o,const ::nodamushi::svd::dimIndex& d)
+inline ostream& operator <<(ostream& o,const ::nodamushi::svd::dimIndex& d)
 {
   bool first = true;
   for(const auto& v:d.get()){

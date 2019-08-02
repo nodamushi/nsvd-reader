@@ -55,7 +55,7 @@ struct dim_info
 
 # include <ostream>
 namespace std{
-ostream& operator<<(ostream& o,::nodamushi::svd::normalized::dim_type d)
+inline ostream& operator<<(ostream& o,::nodamushi::svd::normalized::dim_type d)
 {
   using dt = ::nodamushi::svd::normalized::dim_type;
   switch(d){
@@ -65,7 +65,7 @@ ostream& operator<<(ostream& o,::nodamushi::svd::normalized::dim_type d)
   }
   return o;
 }
-ostream& operator<<(ostream& o,const ::nodamushi::svd::normalized::dim_info& d)
+inline ostream& operator<<(ostream& o,const ::nodamushi::svd::normalized::dim_info& d)
 {
   using dt = ::nodamushi::svd::normalized::dim_type;
   

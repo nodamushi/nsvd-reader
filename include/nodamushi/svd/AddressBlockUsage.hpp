@@ -113,7 +113,7 @@ template<>struct enum_helper<AddressBlockUsage>
 }// end namespace nodamushi
 
 namespace std{
-ostream& operator <<(ostream& os,const ::nodamushi::svd::AddressBlockUsage& value)
+inline ostream& operator <<(ostream& os,const ::nodamushi::svd::AddressBlockUsage& value)
 {
   os << ::nodamushi::svd::enum_helper<::nodamushi::svd::AddressBlockUsage>::nameof(value);
   return os;

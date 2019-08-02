@@ -141,7 +141,7 @@ template<>struct enum_helper<Access>
 }
 }// end namespace nodamushi
 namespace std{
-ostream& operator <<(std::ostream& os,const ::nodamushi::svd::Access& value)
+inline ostream& operator <<(std::ostream& os,const ::nodamushi::svd::Access& value)
 {
   os << ::nodamushi::svd::enum_helper<::nodamushi::svd::Access>::nameof(value);
   return os;

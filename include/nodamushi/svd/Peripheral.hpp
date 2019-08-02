@@ -9,30 +9,8 @@
 #ifndef __NODAMUSHI_SVD_PERIPHERAL_HPP__
 #define __NODAMUSHI_SVD_PERIPHERAL_HPP__
 
-# include <ostream>
-# include <vector>
-# include <memory>
-# include <type_traits>
-# include "nodamushi/svd/node.hpp"
+# include "nodamushi/svd/elements.hpp"
 
-# include "nodamushi/boxvec.hpp"
-# include "nodamushi/svd/path.hpp"
-
-# include "nodamushi/svd/Access.hpp"
-# include "nodamushi/svd/Interrupt.hpp"
-# include "nodamushi/svd/DimArrayIndex.hpp"
-# include "nodamushi/svd/AddressBlock.hpp"
-# include "nodamushi/svd/Cluster.hpp"
-# include "nodamushi/svd/Protection.hpp"
-
-# include "nodamushi/svd/create.hpp"
-# include "nodamushi/const_string.hpp"
-# include "nodamushi/svd/svd_printer.hpp"
-
-# include "nodamushi/svd/value.hpp"
-
-# include "nodamushi/svd/dim_type.hpp"
-# include "nodamushi/svd/svdvisitor.hpp"
 namespace nodamushi{
 namespace svd{
 
@@ -66,22 +44,31 @@ template<typename STR>struct Peripheral:public svd_node
   SVD_VALUE(STR,alternatePeripheral);
   //! @brief &lt;description&gt;
   SVD_VALUE(STR,groupName);
+  //! @brief &lt;prependToName&gt;
   SVD_VALUE(STR,prependToName);
+  //! @brief &lt;appendToName&gt;
   SVD_VALUE(STR,appendToName);
   //! @brief &lt;headerStructName&gt;
   SVD_VALUE(STR,headerStructName);
   //! @brief &lt;disableCondition&gt;
   SVD_VALUE(STR,disableCondition);
-
+  //! @brief &lt;baseAddress&gt;
   SVD_VALUE(hex64,baseAddress,true);
+  //! @brief &lt;size&gt;
   SVD_VALUE(hex32,size);
-
+  //! @brief &lt;access&gt;
   SVD_VALUE(Access, access);
+  //! @brief &lt;protection&gt;
   SVD_VALUE(Protection,protection);
+  //! @brief &lt;resetValue&gt;
   SVD_VALUE(hex64,resetValue);
+  //! @brief &lt;resetMask&gt;
   SVD_VALUE(hex64,resetMask);
+  //! @brief &lt;addressBlock&gt;
   SVD_VALUE(std::vector<AddressBlock>,addressBlock);
+  //! @brief &lt;interrupt&gt;
   SVD_VALUE(std::vector<Interrupt<STR>>,interrupt);
+  //! @brief &lt;registers&gt;
   SVD_VALUE(Registers<STR>,registers);
 };
 
@@ -169,8 +156,9 @@ bool create(SVD& svd,Peripheral<STR>& d)
     else if(c.is_attribute()){
       create(c,d);
     }
+    else c.unknown_element(svd_element::Peripheral);
     if(!t){
-      //TODO error
+      c.illegal_value(svd_element::Peripheral);
     }
   }
   return true;

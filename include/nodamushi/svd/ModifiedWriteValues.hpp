@@ -194,7 +194,7 @@ template<>struct enum_helper<ModifiedWriteValues>
 }
 }// end namespace nodamushi
 namespace std{
-ostream& operator <<(ostream& os,const ::nodamushi::svd::ModifiedWriteValues& value)
+inline ostream& operator <<(ostream& os,const ::nodamushi::svd::ModifiedWriteValues& value)
 {
   os << ::nodamushi::svd::enum_helper<::nodamushi::svd::ModifiedWriteValues>::nameof(value);
   return os;

@@ -246,12 +246,10 @@ struct EnumeratedNumber
       if(base == 2) o << "0b";
       else          o << '#';
       while(h!=0){
-        if((m & h)!=0)
-          o << 'x';
-        else if((v&h)!=0)
-          o << '1';
-        else
-          o << '0';
+        char c = '0';
+        if((m & h)!=0)    c = 'x';
+        else if((v&h)!=0) c = '1';
+        o << c;
         h >>= 1;
       }
     }else{

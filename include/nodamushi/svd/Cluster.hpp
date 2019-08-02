@@ -9,27 +9,8 @@
 #ifndef __NODAMUSHI_SVD_CLUSTER_HPP__
 #define __NODAMUSHI_SVD_CLUSTER_HPP__
 
-# include <ostream>
-# include <vector>
-# include <memory>
-# include "nodamushi/svd/node.hpp"
+# include "nodamushi/svd/elements.hpp"
 
-# include "nodamushi/svd/reg_or_cluster.hpp"
-
-# include "nodamushi/svd/create.hpp"
-# include "nodamushi/const_string.hpp"
-# include "nodamushi/svd/svd_printer.hpp"
-
-# include "nodamushi/svd/Register.hpp"
-# include "nodamushi/svd/ReadAction.hpp"
-# include "nodamushi/svd/dim_type.hpp"
-# include "nodamushi/svd/DimArrayIndex.hpp"
-# include "nodamushi/svd/value.hpp"
-# include "nodamushi/svd/Field.hpp"
-# include "nodamushi/svd/WriteConstraint.hpp"
-# include "nodamushi/svd/Protection.hpp"
-# include "nodamushi/svd/svdvisitor.hpp"
-# include "nodamushi/svd/path.hpp"
 namespace nodamushi{
 namespace svd{
 
@@ -176,6 +157,7 @@ bool createRegisterOrCluster(SVD& c,Registers<STR>& d)
     d.registers.emplace_back(ptr);
     create(c,cl);
   }
+  else c.unknown_element(svd_element::Registers);
   return true;
 }
 }
@@ -256,8 +238,9 @@ bool create(SVD& svd,Cluster<STR>& d)
     else if(c.is_attribute()){
       create(c,d);
     }
+    else c.unknown_element(svd_element::Cluster);
     if(!t){
-      //TODO error
+      c.illegal_value(svd_element::Cluster);
     }
   }
   return true;

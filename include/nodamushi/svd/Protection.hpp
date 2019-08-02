@@ -103,7 +103,7 @@ template<>struct enum_helper<Protection>
 }}// end namespace nodamushi::svd
 
 namespace std{
-ostream& operator <<(ostream& os,const ::nodamushi::svd::Protection& value)
+inline ostream& operator <<(ostream& os,const ::nodamushi::svd::Protection& value)
 {
   os << ::nodamushi::svd::enum_helper<::nodamushi::svd::Protection>::nameof(value);
   return os;

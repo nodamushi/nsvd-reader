@@ -8,14 +8,8 @@
  */
 #ifndef __NODAMUSHI_SVD_INTERRUPT_HPP__
 #define __NODAMUSHI_SVD_INTERRUPT_HPP__
-# include <ostream>
-# include "nodamushi/svd/node.hpp"
 
-# include "nodamushi/svd/create.hpp"
-# include "nodamushi/const_string.hpp"
-# include "nodamushi/svd/svd_printer.hpp"
-
-# include "nodamushi/svd/value.hpp"
+# include "nodamushi/svd/elements.hpp"
 
 namespace nodamushi{
 namespace svd{
@@ -46,8 +40,9 @@ bool create(SVD& svd,Interrupt<STR>& d)
     if(n == "name")t = (d.name = c);
     else if(n == "description")t = (d.description = c);
     else if(n == "value")t = (d.value =c);
+    else c.unknown_element(svd_element::Interrupt);
     if(!t){
-      //TODO error
+      c.illegal_value(svd_element::Interrupt);
     }
   }
   return true;

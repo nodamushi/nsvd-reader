@@ -9,12 +9,7 @@
 #ifndef __NODAMUSHI_SVD_WRITECONSTRAINT_HPP__
 #define __NODAMUSHI_SVD_WRITECONSTRAINT_HPP__
 
-# include <ostream>
-# include "nodamushi/svd/node.hpp"
-
-# include "nodamushi/svd/create.hpp"
-# include "nodamushi/const_string.hpp"
-# include "nodamushi/svd/svd_printer.hpp"
+# include "nodamushi/svd/elements.hpp"
 
 namespace nodamushi{
 namespace svd{
@@ -57,8 +52,9 @@ bool create(SVD& svd,WriteConstraintRange& d)
     bool t = true;
     if(n == "minimum") t = (d.minimum = c);
     else if(n == "maximum") t = (d.maximum = c);
+    else c.unknown_element(svd_element::WriteConstraintRange);
     if(!t){
-      //TODO error
+      c.illegal_value(svd_element::WriteConstraintRange);
     }
   }
   return true;
@@ -93,8 +89,9 @@ bool create(SVD& svd,WriteConstraint& d)
     if(n == "writeAsRead") t = (d.writeAsRead = c);
     else if(n == "useEnumeratedValues") t = (d.useEnumeratedValues = c);
     else if(n == "range")t = (d.range = c);
+    else c.unknown_element(svd_element::WriteConstraint);
     if(!t){
-      //TODO error
+      c.illegal_value(svd_element::WriteConstraint);
     }
   }
   return true;

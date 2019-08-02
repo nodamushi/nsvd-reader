@@ -10,26 +10,7 @@
 #ifndef __NODAMUSHI_SVD_FIELD_HPP__
 #define __NODAMUSHI_SVD_FIELD_HPP__
 
-# include <ostream>
-# include <vector>
-# include "nodamushi/svd/node.hpp"
-
-# include "nodamushi/boxvec.hpp"
-
-# include "nodamushi/svd/create.hpp"
-# include "nodamushi/const_string.hpp"
-# include "nodamushi/svd/svd_printer.hpp"
-
-# include "nodamushi/svd/Access.hpp"
-# include "nodamushi/svd/ReadAction.hpp"
-# include "nodamushi/svd/dim_type.hpp"
-# include "nodamushi/svd/DimArrayIndex.hpp"
-# include "nodamushi/svd/value.hpp"
-# include "nodamushi/svd/ModifiedWriteValues.hpp"
-# include "nodamushi/svd/bitRange.hpp"
-# include "nodamushi/svd/Enumeration.hpp"
-# include "nodamushi/svd/path.hpp"
-# include "nodamushi/svd/svdvisitor.hpp"
+# include "nodamushi/svd/elements.hpp"
 
 namespace nodamushi{
 namespace svd{
@@ -154,9 +135,9 @@ bool create(SVD& svd,Field<STR>& d)
     else if(c.is_attribute()){
       create(c,d);
     }
+    else c.unknown_element(svd_element::Field);
     if(!t){
-      //TODO error
-      
+      c.illegal_value(svd_element::Field);
     }
   }
   return true;
@@ -211,6 +192,7 @@ bool create(SVD& svd,Fields<STR>& d)
     decltype(svd.next_child()) c = svd.next_child();
     string_ref n = c.get_name();
     if(n == "field")d.field = c;
+    else c.unknown_element(svd_element::Fields);
   }
   return true;
 }

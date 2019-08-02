@@ -206,7 +206,7 @@ template<>struct enum_helper<DataType>
 }
 }// end namespace nodamushi
 namespace std{
-ostream& operator <<(std::ostream& os,const ::nodamushi::svd::DataType& value)
+inline ostream& operator <<(std::ostream& os,const ::nodamushi::svd::DataType& value)
 {
   os << ::nodamushi::svd::enum_helper<::nodamushi::svd::DataType>::nameof(value);
   return os;

@@ -123,7 +123,7 @@ template<>struct enum_helper<Endian>
 }
 }// end namespace nodamushi
 namespace std{
-ostream& operator <<(ostream& os,const ::nodamushi::svd::Endian& value)
+inline ostream& operator <<(ostream& os,const ::nodamushi::svd::Endian& value)
 {
   os << ::nodamushi::svd::enum_helper<::nodamushi::svd::Endian>::nameof(value);
   return os;

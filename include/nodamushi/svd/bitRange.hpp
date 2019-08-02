@@ -120,7 +120,7 @@ template<>struct value_setter_helper<bitRange>
 
 
 namespace std{
-ostream& operator<<(ostream& o,const nodamushi::svd::bitRange& r)
+inline ostream& operator<<(ostream& o,const nodamushi::svd::bitRange& r)
 {
   o << '['<<r.msb <<':' <<r.lsb<<']';
   return o;

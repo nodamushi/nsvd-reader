@@ -9,6 +9,7 @@
 # include <vector>
 # include "nodamushi/string_type.hpp"
 # include "nodamushi/box.hpp"
+# include "nodamushi/svd/svd_reader.hpp"
 
 namespace nodamushi{
 namespace svd{

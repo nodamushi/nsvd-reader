@@ -8,18 +8,8 @@
  */
 #ifndef __NODAMUSHI_SVD_CPU_HPP__
 #define __NODAMUSHI_SVD_CPU_HPP__
-# include <ostream>
-# include <vector>
-# include "nodamushi/svd/node.hpp"
 
-# include "nodamushi/svd/Endian.hpp"
-
-# include "nodamushi/svd/create.hpp"
-# include "nodamushi/const_string.hpp"
-# include "nodamushi/svd/svd_printer.hpp"
-
-# include "nodamushi/svd/value.hpp"
-# include "nodamushi/svd/SAURegionConfigProtect.hpp"
+# include "nodamushi/svd/elements.hpp"
 
 namespace nodamushi{
 namespace svd{
@@ -153,8 +143,9 @@ bool create(SVD& svd,SAURegionsConfigRegion<STR>& d)
     else if(c.is_attribute()){
       create(c,d);
     }
+    else c.unknown_element(svd_element::SAURegionsConfigRegion);
     if(!t){
-      //TODO error
+      c.illegal_value(svd_element::SAURegionsConfigRegion);
     }
   }
   return true;
@@ -175,9 +166,9 @@ bool create(SVD& svd,SAURegionsConfig<STR>& d)
       create(c,d.region[i]);
     }else if(c.is_attribute()){
       create(c,d);
-    }
+    }else c.unknown_element(svd_element::SAURegionsConfig);
     if(!t){
-      //TODO error
+      c.illegal_value(svd_element::SAURegionsConfig);
     }
   }
   return true;
@@ -211,8 +202,9 @@ bool create(SVD& svd,Cpu<STR>& d)
     else if(c.is_attribute()){
       create(c,d);
     }
+    else c.unknown_element(svd_element::Cpu);
     if(!t){
-      //TODO error
+      c.illegal_value(svd_element::Cpu);
     }
   }
   return true;

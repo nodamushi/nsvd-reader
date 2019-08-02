@@ -38,3 +38,14 @@ def_test(EnumeratedNumberTest)
 def_test(clusterTest)
 def_test(sample_readTest)
 def_test(sample_normTest)
+
+
+add_executable(link_test 
+  link_test_bar.cpp
+  link_test_foo.cpp
+  link_test_main.cpp
+  )
+
+target_include_directories(link_test 
+  PUBLIC
+  ../include)

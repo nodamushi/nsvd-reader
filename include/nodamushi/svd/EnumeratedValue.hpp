@@ -8,12 +8,10 @@
  */
 #ifndef __NODAMUSHI_SVD_ENUMERATEDVALUE_HPP__
 #define __NODAMUSHI_SVD_ENUMERATEDVALUE_HPP__
-# include "nodamushi/svd/node.hpp"
 
-# include "nodamushi/svd/create.hpp"
-# include "nodamushi/svd/svd_printer.hpp"
-# include "nodamushi/svd/value.hpp"
+# include "nodamushi/svd/elements.hpp"
 # include "nodamushi/svd/EnumeratedNumber.hpp"
+
 namespace nodamushi{
 namespace svd{
 
@@ -67,8 +65,9 @@ bool create(SVD& svd,EnumeratedValue<STR>& d)
     else if(n == "description") t = (d.description = c);
     else if(n == "value") t = (d.value = c);
     else if(n == "isDefault") t = (d.isDefault = c);
+    else c.unknown_element(svd_element::EnumeratedValue);
     if(!t){
-      //TODO error
+      c.illegal_value(svd_element::EnumeratedValue);
     }
   }
   return true;

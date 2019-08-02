@@ -9,18 +9,7 @@
 #ifndef __NODAMUSHI_SVD_ENUMERATION_HPP__
 #define __NODAMUSHI_SVD_ENUMERATION_HPP__
 
-# include <ostream>
-# include <vector>
-# include "nodamushi/svd/node.hpp"
-
-
-# include "nodamushi/svd/create.hpp"
-# include "nodamushi/const_string.hpp"
-# include "nodamushi/svd/svd_printer.hpp"
-# include "nodamushi/svd/EnumUsage.hpp"
-# include "nodamushi/svd/EnumeratedValue.hpp"
-# include "nodamushi/svd/path.hpp"
-# include "nodamushi/svd/svdvisitor.hpp"
+# include "nodamushi/svd/elements.hpp"
 
 namespace nodamushi{
 namespace svd{
@@ -117,8 +106,9 @@ bool create(SVD& svd,Enumeration<STR>& d)
     }else if(c.is_attribute()){
       create(c,d);
     }
+    else c.unknown_element(svd_element::Enumeration);
     if(!t){
-      //TODO error
+      c.illegal_value(svd_element::Enumeration);
     }
   }
   return true;
