@@ -12,6 +12,12 @@ std::string to_str(const EnumeratedNumber& n){
   s << 100 << std::hex <<10;
   return s.str();
 }
+std::string to_string(const EnumeratedNumber& n){
+  std::stringstream s;
+  s << n;
+  return s.str();
+}
+
 
 TEST(entest,dec)
 {
@@ -133,5 +139,83 @@ TEST(entest,compare)
   ASSERT_EQ(n2,n4);
   ASSERT_EQ(n3,9);
   ASSERT_EQ(n3,11);
+}
+
+
+TEST(entest,zero)
+{
+  EnumeratedNumber n ;
+  n = "0b0";
+  ASSERT_EQ(n.get_value(),0);
+  ASSERT_EQ(n.get_dont_care(),0);
+  ASSERT_EQ(n.get_base(),2);
+  ASSERT_EQ(to_string(n),"0b0");
+  n = "#0";
+  ASSERT_EQ(n.get_value(), 0);
+  ASSERT_EQ(n.get_dont_care(),0);
+  ASSERT_EQ(n.get_base(),2);
+  ASSERT_EQ(to_string(n),"#0");
+  n = "0bx";
+  ASSERT_EQ(n.get_value(),0);
+  ASSERT_EQ(n.get_dont_care(),1);
+  ASSERT_EQ(n.get_base(),2);
+  ASSERT_EQ(to_string(n),"0bx");
+  n = "#x";
+  ASSERT_EQ(n.get_value(), 0);
+  ASSERT_EQ(n.get_dont_care(),1);
+  ASSERT_EQ(n.get_base(),2);
+  ASSERT_EQ(to_string(n),"#x");
+
+  n = "0";
+  ASSERT_EQ(n.get_value(), 0);
+  ASSERT_EQ(n.get_dont_care(),0);
+  ASSERT_EQ(n.get_base(),10);
+  ASSERT_EQ(to_string(n),"0");
+
+  n = "0x0";
+  ASSERT_EQ(n.get_value(), 0);
+  ASSERT_EQ(n.get_dont_care(),0);
+  ASSERT_EQ(n.get_base(),16);
+  ASSERT_EQ(to_string(n),"0x0");
+
+}
+
+
+TEST(entest,one)
+{
+  EnumeratedNumber n ;
+  n = "0b1";
+  ASSERT_EQ(n.get_value(),1);
+  ASSERT_EQ(n.get_dont_care(),0);
+  ASSERT_EQ(n.get_base(),2);
+  ASSERT_EQ(to_string(n),"0b1");
+  n = "#1";
+  ASSERT_EQ(n.get_value(), 1);
+  ASSERT_EQ(n.get_dont_care(),0);
+  ASSERT_EQ(n.get_base(),2);
+  ASSERT_EQ(to_string(n),"#1");
+  n = "0b1x";
+  ASSERT_EQ(n.get_value(),2);
+  ASSERT_EQ(n.get_dont_care(),1);
+  ASSERT_EQ(n.get_base(),2);
+  ASSERT_EQ(to_string(n),"0b1x");
+  n = "#1x";
+  ASSERT_EQ(n.get_value(), 2);
+  ASSERT_EQ(n.get_dont_care(),1);
+  ASSERT_EQ(n.get_base(),2);
+  ASSERT_EQ(to_string(n),"#1x");
+
+  n = "1";
+  ASSERT_EQ(n.get_value(), 1);
+  ASSERT_EQ(n.get_dont_care(),0);
+  ASSERT_EQ(n.get_base(),10);
+  ASSERT_EQ(to_string(n),"1");
+
+  n = "0x1";
+  ASSERT_EQ(n.get_value(), 1);
+  ASSERT_EQ(n.get_dont_care(),0);
+  ASSERT_EQ(n.get_base(),16);
+  ASSERT_EQ(to_string(n),"0x1");
+
 }
 

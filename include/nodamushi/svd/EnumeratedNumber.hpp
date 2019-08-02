@@ -22,7 +22,7 @@ namespace svd{
  *
  * @par
  * format:
- * 
+ *
  * - [0-9]+           :decimal
  * - 0x[0-9A-Fa-f]+   :hexadecimal
  * - 0b[01x]+         :binary
@@ -47,7 +47,7 @@ struct EnumeratedNumber
    */
   operator uint64_t()const{return value;}
   /*!
-   * @brief get don't care 
+   * @brief get don't care
    * @return don't care bit information.
    * @par
    *   get_dont_care() &(1 << y) != 0  : bit y is don't care
@@ -102,9 +102,9 @@ struct EnumeratedNumber
   /**
    * @brief compare without don't care bits
    * @param e compare target
-   * @return 
+   * @return
    * - minus : less than e
-   * - 0     : same 
+   * - 0     : same
    * - plus  : greater than e
    */
   int compare(const EnumeratedNumber& e)const
@@ -115,9 +115,9 @@ struct EnumeratedNumber
   /**
    * @brief compare without don't care bits
    * @param e compare target
-   * @return 
+   * @return
    * - minus : less than e
-   * - 0     : same 
+   * - 0     : same
    * - plus  : greater than e
    */
   int compare(uint64_t e)const
@@ -132,7 +132,7 @@ struct EnumeratedNumber
   bool operator<=(uint64_t e)const{return compare(e)<=0;}
   bool operator>(uint64_t e)const{return  compare(e)>0;}
   bool operator>=(uint64_t e)const{return compare(e)>=0;}
-  
+
 
 
 
@@ -175,22 +175,21 @@ struct EnumeratedNumber
     auto l = str.length();
     int rad = 10;
     size_t pos = 0;
-    if(l > 2){
-      if(str[0] == '0'){
-        if(str[1] == 'x' || str[1] == 'X'){
-          rad = 16;
-          pos = 2;
-        }else if(str[1] == 'b' || str[1] == 'B'){
-          rad = 2;
-          pos = 2;
-        }
-      }else if(str[0] == '#'){
-        rad = -2;
-        pos = 1;
+    if(str[0] == '#'){
+      rad = -2;
+      pos = 1;
+    }else if(l > 2 && str[0] == '0'){
+      if(str[1] == 'x' || str[1] == 'X'){
+        rad = 16;
+        pos = 2;
+      }else if(str[1] == 'b' || str[1] == 'B'){
+        rad = 2;
+        pos = 2;
       }
     }
     if(rad >= 10){
       value = ::nodamushi::to_int<uint64_t>(str,pos,l,rad);
+      dont_care = 0;
     }else{
       uint64_t val = 0;
       uint64_t don = 0;
@@ -220,7 +219,7 @@ struct EnumeratedNumber
   }
   /*!
    * @brief update contents.
-   * @param v value 
+   * @param v value
    * @param dont_care don't care bit information.(1: don't core, 0: care)
    * @param base radix
    */
@@ -236,11 +235,14 @@ struct EnumeratedNumber
 
   void print(std::ostream& o)const noexcept
   {
-    auto f = o.flags();
     if(base == 2 || base == -2){
       uint64_t v = value;
       uint64_t m = dont_care;
       uint64_t h = std::max(highest1bit(v),highest1bit(m));
+      if(h == 0){
+        o << (base == 2? "0b0":"#0");
+        return;
+      }
       if(base == 2) o << "0b";
       else          o << '#';
       while(h!=0){
@@ -252,12 +254,14 @@ struct EnumeratedNumber
           o << '0';
         h >>= 1;
       }
-    }else if(base == 16){
-      o <<"0x"<< std::hex << std::uppercase << value;
     }else{
-      o << std::dec << value;
+      auto f = o.flags();
+      if(base == 16)
+        o <<"0x"<< std::hex << std::uppercase << value;
+      else
+        o << std::dec << value;
+      o.flags(f);
     }
-    o.flags(f);
   }
  private:
   static uint64_t highest1bit(uint64_t x)
@@ -270,7 +274,6 @@ struct EnumeratedNumber
     x |= x>>32;
     return x - (x >> 1);
   }
-
 };
 
 
