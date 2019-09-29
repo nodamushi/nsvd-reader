@@ -7,8 +7,8 @@
  * These codes are licensed under CC0.
  * http://creativecommons.org/publicdomain/zero/1.0/
  */
-#ifndef __NODAMUSHI_SVD_DIM_TYPE_HPP__
-#define __NODAMUSHI_SVD_DIM_TYPE_HPP__
+#ifndef NODAMUSHI_SVD_DIM_TYPE_HPP
+#define NODAMUSHI_SVD_DIM_TYPE_HPP
 
 # include <ostream>
 # include <cstdint>
@@ -318,4 +318,4 @@ inline ostream& operator <<(ostream& o,const ::nodamushi::svd::dimIndex& d)
 }
 } // end namespace std
 
-#endif // __NODAMUSHI_SVD_DIM_TYPE_HPP__
+#endif // NODAMUSHI_SVD_DIM_TYPE_HPP

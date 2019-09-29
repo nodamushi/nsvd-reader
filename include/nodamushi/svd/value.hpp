@@ -6,8 +6,8 @@
  * These codes are licensed under CC0.
  * http://creativecommons.org/publicdomain/zero/1.0/
  */
-#ifndef __NODAMUSHI_SVD_VALUE_HPP__
-#define __NODAMUSHI_SVD_VALUE_HPP__
+#ifndef NODAMUSHI_SVD_VALUE_HPP
+#define NODAMUSHI_SVD_VALUE_HPP
 
 # include <utility>
 # include <type_traits>
@@ -312,4 +312,4 @@ template<typename T,bool attribute,bool required,char... name>struct value
 # endif
 
 
-#endif // __NODAMUSHI_SVD_VALUE_HPP__
+#endif // NODAMUSHI_SVD_VALUE_HPP

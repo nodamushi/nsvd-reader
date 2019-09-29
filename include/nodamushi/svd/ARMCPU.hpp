@@ -7,8 +7,8 @@
  * http://creativecommons.org/publicdomain/zero/1.0/
  */
 
-#ifndef __NODAMUSHI_SVD_ARMCPU_HPP__
-#define __NODAMUSHI_SVD_ARMCPU_HPP__
+#ifndef NODAMUSHI_SVD_ARMCPU_HPP
+#define NODAMUSHI_SVD_ARMCPU_HPP
 
 namespace nodamushi{
 namespace svd{
@@ -117,4 +117,4 @@ template<typename STR>ARMCPU get_cpu_type(const STR& name)
 
 }}// end namespace nodamushi
 
-#endif // __NODAMUSHI_SVD_ARMCPU_HPP__
+#endif // NODAMUSHI_SVD_ARMCPU_HPP

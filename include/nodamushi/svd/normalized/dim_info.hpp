@@ -2,8 +2,8 @@
   @brief dimension information
   @file nodamushi/svd/normalized/dim_info.hpp
 */
-#ifndef __NODAMUSHI_SVD_NORMALIZED_DIM_INFO_HPP__
-#define __NODAMUSHI_SVD_NORMALIZED_DIM_INFO_HPP__
+#ifndef NODAMUSHI_SVD_NORMALIZED_DIM_INFO_HPP
+#define NODAMUSHI_SVD_NORMALIZED_DIM_INFO_HPP
 
 # include <cstdint>
 
@@ -79,4 +79,4 @@ inline ostream& operator<<(ostream& o,const ::nodamushi::svd::normalized::dim_in
 
 }
 
-#endif // __NODAMUSHI_SVD_NORMALIZED_DIM_INFO_HPP__
+#endif // NODAMUSHI_SVD_NORMALIZED_DIM_INFO_HPP

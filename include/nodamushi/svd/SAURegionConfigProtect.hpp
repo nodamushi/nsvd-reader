@@ -7,8 +7,8 @@
  * http://creativecommons.org/publicdomain/zero/1.0/
  */
 
-#ifndef __NODAMUSHI_SVD_SAUREGIONCONFIGPROTECT_HPP__
-#define __NODAMUSHI_SVD_SAUREGIONCONFIGPROTECT_HPP__
+#ifndef NODAMUSHI_SVD_SAUREGIONCONFIGPROTECT_HPP
+#define NODAMUSHI_SVD_SAUREGIONCONFIGPROTECT_HPP
 
 #include <string>
 # if __cplusplus >= 201703
@@ -105,4 +105,4 @@ inline ostream& operator <<(std::ostream& os,const ::nodamushi::svd::SAURegionCo
 }
 }
 
-#endif // __NODAMUSHI_SVD_SAUREGIONCONFIGPROTECT_HPP__
+#endif // NODAMUSHI_SVD_SAUREGIONCONFIGPROTECT_HPP

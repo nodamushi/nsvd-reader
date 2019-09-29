@@ -6,8 +6,8 @@
  * These codes are licensed under CC0.
  * http://creativecommons.org/publicdomain/zero/1.0/
  */
-#ifndef __NODAMUSHI_SVD_SVD_PRINTER_IMPLE_HPP__
-#define __NODAMUSHI_SVD_SVD_PRINTER_IMPLE_HPP__
+#ifndef NODAMUSHI_SVD_SVD_PRINTER_IMPLE_HPP
+#define NODAMUSHI_SVD_SVD_PRINTER_IMPLE_HPP
 
 # include "nodamushi/box.hpp"
 # include "nodamushi/boxvec.hpp"
@@ -311,4 +311,4 @@ template<typename T> struct print_with_svd_escape_helper<false,T>
 }// end namespace svd
 }// end namespace nodamushi
 
-#endif // __NODAMUSHI_SVD_SVD_PRINTER_IMPLE_HPP__
+#endif // NODAMUSHI_SVD_SVD_PRINTER_IMPLE_HPP

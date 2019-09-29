@@ -6,8 +6,8 @@
  * These codes are licensed under CC0.
  * http://creativecommons.org/publicdomain/zero/1.0/
  */
-#ifndef __NODAMUSHI_VISITOR_VISITOR_HPP__
-#define __NODAMUSHI_VISITOR_VISITOR_HPP__
+#ifndef NODAMUSHI_VISITOR_VISITOR_HPP
+#define NODAMUSHI_VISITOR_VISITOR_HPP
 
 # include "nodamushi/visitor/result.hpp"
 
@@ -75,4 +75,4 @@ template<typename T,_visitor_member_type_ v>struct is_static
 
 # include "nodamushi/visitor/visitor/imple.hpp"
 
-#endif // __NODAMUSHI_VISITOR_VISITOR_HPP__
+#endif // NODAMUSHI_VISITOR_VISITOR_HPP

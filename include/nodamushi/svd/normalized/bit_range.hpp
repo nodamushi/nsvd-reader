@@ -2,8 +2,8 @@
   @brief normalized bit_range
   @file nodamushi/svd/normalized/bit_range.hpp
 */
-#ifndef __NODAMUSHI_SVD_NORMALIZED_BIT_RANGE_HPP__
-#define __NODAMUSHI_SVD_NORMALIZED_BIT_RANGE_HPP__
+#ifndef NODAMUSHI_SVD_NORMALIZED_BIT_RANGE_HPP
+#define NODAMUSHI_SVD_NORMALIZED_BIT_RANGE_HPP
 
 # include <cstdint>
 # include <ostream>
@@ -124,5 +124,5 @@ inline ostream& operator <<(ostream& o ,const ::nodamushi::svd::normalized::bit_
 }
 }
 
-#endif // __NODAMUSHI_SVD_NORMALIZED_BITRANGE_HPP__
+#endif // NODAMUSHI_SVD_NORMALIZED_BITRANGE_HPP
 

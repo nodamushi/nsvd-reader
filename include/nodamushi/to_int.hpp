@@ -7,8 +7,8 @@
  * http://creativecommons.org/publicdomain/zero/1.0/
  */
 
-#ifndef __NODAMUSHI_TO_INT_HPP__
-#define __NODAMUSHI_TO_INT_HPP__
+#ifndef NODAMUSHI_TO_INT_HPP
+#define NODAMUSHI_TO_INT_HPP
 
 # include <cstdint>
 # include <string>

@@ -13,8 +13,8 @@
   Expat license is the same as the MIT/X Consortium license.
  */
 
-#ifndef __NODAMUSHI_SVD_EXPAT_HPP__
-#define __NODAMUSHI_SVD_EXPAT_HPP__
+#ifndef NODAMUSHI_SVD_EXPAT_HPP
+#define NODAMUSHI_SVD_EXPAT_HPP
 
 # include "nodamushi/svd/svd_reader.hpp"
 # include "nodamushi/svd/svd_reader_stream_helper.hpp"
@@ -199,4 +199,4 @@ struct expat_svd_reader:public stream_reader_base<expat_svd_reader>
 }
 }// end namespace nodamushi
 
-#endif // __NODAMUSHI_SVD_EXPAT_HPP__
+#endif // NODAMUSHI_SVD_EXPAT_HPP

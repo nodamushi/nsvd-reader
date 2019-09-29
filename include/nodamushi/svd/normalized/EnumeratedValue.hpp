@@ -6,8 +6,8 @@
  * These codes are licensed under CC0.
  * http://creativecommons.org/publicdomain/zero/1.0/
  */
-#ifndef __NODAMUSHI_SVD_NORMALIZED_ENUMERATEDVALUE_HPP__
-#define __NODAMUSHI_SVD_NORMALIZED_ENUMERATEDVALUE_HPP__
+#ifndef NODAMUSHI_SVD_NORMALIZED_ENUMERATEDVALUE_HPP
+#define NODAMUSHI_SVD_NORMALIZED_ENUMERATEDVALUE_HPP
 
 # include <cstdint>
 # include "nodamushi/svd/EnumeratedNumber.hpp"
@@ -79,4 +79,4 @@ template<typename STRREF>struct EnumeratedValue
 
 }}} // end namespace
 
-#endif // __NODAMUSHI_SVD_NORMALIZED_ENUMERATEDVALUE_HPP__
+#endif // NODAMUSHI_SVD_NORMALIZED_ENUMERATEDVALUE_HPP

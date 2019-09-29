@@ -6,8 +6,8 @@
  * These codes are licensed under CC0.
  * http://creativecommons.org/publicdomain/zero/1.0/
  */
-#ifndef __NODAMUSHI_SVD_VALUE_VALUE_SETTER_HPP__
-#define __NODAMUSHI_SVD_VALUE_VALUE_SETTER_HPP__
+#ifndef NODAMUSHI_SVD_VALUE_VALUE_SETTER_HPP
+#define NODAMUSHI_SVD_VALUE_VALUE_SETTER_HPP
 
 # include <type_traits>
 # include <limits>
@@ -334,4 +334,4 @@ template<>struct value_setter<std::string,std::string_view>
 }} // end namespace nodamushi::svd
 
 
-#endif // __NODAMUSHI_SVD_VALUE_VALUE_SETTER_HPP__
+#endif // NODAMUSHI_SVD_VALUE_VALUE_SETTER_HPP

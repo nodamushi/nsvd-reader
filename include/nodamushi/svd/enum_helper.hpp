@@ -2,8 +2,8 @@
  * These codes are licensed under CC0.
  * http://creativecommons.org/publicdomain/zero/1.0/
  */
-#ifndef __NODAMUSHI_SVD_ENUM_HELPER_HPP__
-#define __NODAMUSHI_SVD_ENUM_HELPER_HPP__
+#ifndef NODAMUSHI_SVD_ENUM_HELPER_HPP
+#define NODAMUSHI_SVD_ENUM_HELPER_HPP
 
 # include <string>
 # include <cstring>
@@ -30,4 +30,4 @@ template<typename T>struct enum_helper
 }
 } // end namespace nodamushi
 
-#endif //__NODAMUSHI_ENUM_HELPER_HPP__
+#endif //NODAMUSHI_ENUM_HELPER_HPP

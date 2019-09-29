@@ -6,8 +6,8 @@
  * These codes are licensed under CC0.
  * http://creativecommons.org/publicdomain/zero/1.0/
  */
-#ifndef __NODAMUSHI_SVD_ENUMERATEDVALUE_HPP__
-#define __NODAMUSHI_SVD_ENUMERATEDVALUE_HPP__
+#ifndef NODAMUSHI_SVD_ENUMERATEDVALUE_HPP
+#define NODAMUSHI_SVD_ENUMERATEDVALUE_HPP
 
 # include "nodamushi/svd/elements.hpp"
 # include "nodamushi/svd/EnumeratedNumber.hpp"
@@ -105,4 +105,4 @@ struct svd_printer<EnumeratedValue<STR>>{
 } // end namespace svd
 }// end namespace nodamushi
 
-#endif // __NODAMUSHI_SVD_ENUMERATEDVALUE_HPP__
+#endif // NODAMUSHI_SVD_ENUMERATEDVALUE_HPP

@@ -6,8 +6,8 @@
  * These codes are licensed under CC0.
  * http://creativecommons.org/publicdomain/zero/1.0/
  */
-#ifndef __NODAMUSHI_BOX_HPP__
-#define __NODAMUSHI_BOX_HPP__
+#ifndef NODAMUSHI_BOX_HPP
+#define NODAMUSHI_BOX_HPP
 
 # include <type_traits>
 # include <memory>
@@ -85,4 +85,4 @@ const T& unboxing(const box<T,D>& t){return *t;}
 
 }// end namespace nodamushi
 
-#endif // __NODAMUSHI_BOX_HPP__
+#endif // NODAMUSHI_BOX_HPP

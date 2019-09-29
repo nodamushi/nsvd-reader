@@ -6,8 +6,8 @@
  * These codes are licensed under CC0.
  * http://creativecommons.org/publicdomain/zero/1.0/
  */
-#ifndef __NODAMUSHI_SVD_NORMALIZED_DIMARRAYINDEX_HPP__
-#define __NODAMUSHI_SVD_NORMALIZED_DIMARRAYINDEX_HPP__
+#ifndef NODAMUSHI_SVD_NORMALIZED_DIMARRAYINDEX_HPP
+#define NODAMUSHI_SVD_NORMALIZED_DIMARRAYINDEX_HPP
 
 
 # include <vector>
@@ -46,4 +46,4 @@ struct DimArrayIndex:public svd_node
 
 }}} // end namespace svd
 
-#endif // __NODAMUSHI_SVD_NORMALIZED_DIMARRAYINDEX_HPP__
+#endif // NODAMUSHI_SVD_NORMALIZED_DIMARRAYINDEX_HPP

@@ -6,8 +6,8 @@
  * These codes are licensed under CC0.
  * http://creativecommons.org/publicdomain/zero/1.0/
  */
-#ifndef __NODAMUSHI_SVD_VALUE_DEFINE_HPP__
-#define __NODAMUSHI_SVD_VALUE_DEFINE_HPP__
+#ifndef NODAMUSHI_SVD_VALUE_DEFINE_HPP
+#define NODAMUSHI_SVD_VALUE_DEFINE_HPP
 
 #include "nodamushi/svd/value.hpp"
 # include "nodamushi/const_string.hpp"
@@ -84,4 +84,4 @@ using value_t = typename details::value_type_builder<T,attribute,required,name..
 #  define __SVD_VALUE_EXPAND_NAME2__(name) ::nodamushi::at0<32>(name),::nodamushi::at(name,1 ),::nodamushi::at(name,2 ),::nodamushi::at(name,3 ),::nodamushi::at(name,4 ),::nodamushi::at(name,5 ),::nodamushi::at(name,6 ),::nodamushi::at(name,7 ),::nodamushi::at(name,8 ),::nodamushi::at(name,9 ),::nodamushi::at(name,10),::nodamushi::at(name,11),::nodamushi::at(name,12),::nodamushi::at(name,13),::nodamushi::at(name,14),::nodamushi::at(name,15),::nodamushi::at(name,16),::nodamushi::at(name,17),::nodamushi::at(name,18),::nodamushi::at(name,19),::nodamushi::at(name,20),::nodamushi::at(name,21),::nodamushi::at(name,22),::nodamushi::at(name,23),::nodamushi::at(name,24),::nodamushi::at(name,25),::nodamushi::at(name,26),::nodamushi::at(name,27),::nodamushi::at(name,28),::nodamushi::at(name,29),::nodamushi::at(name,30),::nodamushi::at(name,31)
 
 # endif
-#endif // __NODAMUSHI_SVD_VALUE_DEFINE_HPP__
+#endif // NODAMUSHI_SVD_VALUE_DEFINE_HPP

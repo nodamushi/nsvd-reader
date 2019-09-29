@@ -7,8 +7,8 @@
  * http://creativecommons.org/publicdomain/zero/1.0/
  */
 
-#ifndef __NODAMUSHI_BOXVEC_HPP__
-#define __NODAMUSHI_BOXVEC_HPP__
+#ifndef NODAMUSHI_BOXVEC_HPP
+#define NODAMUSHI_BOXVEC_HPP
 
 # include <vector>
 # include <memory>
@@ -278,4 +278,4 @@ class boxvec
 
 }// end namespace nodamushi
 
-#endif // __NODAMUSHI_BOXVEC_HPP__
+#endif // NODAMUSHI_BOXVEC_HPP

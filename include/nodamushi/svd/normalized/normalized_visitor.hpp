@@ -65,8 +65,8 @@ struct my_visitor
  * http://creativecommons.org/publicdomain/zero/1.0/
  */
 
-#ifndef __NODAMUSHI_SVD_NORMALIZED_VISITOR_HPP__
-#define __NODAMUSHI_SVD_NORMALIZED_VISITOR_HPP__
+#ifndef NODAMUSHI_SVD_NORMALIZED_VISITOR_HPP
+#define NODAMUSHI_SVD_NORMALIZED_VISITOR_HPP
 
 
 # include <type_traits>
@@ -255,4 +255,4 @@ template<typename T1,typename T2>struct is_same
 
 
 }}}// end namespace nodamushi::svd::normalized
-#endif // __NODAMUSHI_SVD_NORMALIZED_VISITOR_HPP__
+#endif // NODAMUSHI_SVD_NORMALIZED_VISITOR_HPP

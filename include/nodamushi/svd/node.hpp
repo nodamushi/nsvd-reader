@@ -2,8 +2,8 @@
   @brief svd element marker interface
   @file nodamushi/svd/node.hpp
 */
-#ifndef __NODAMUSHI_SVD_NODE_HPP__
-#define __NODAMUSHI_SVD_NODE_HPP__
+#ifndef NODAMUSHI_SVD_NODE_HPP
+#define NODAMUSHI_SVD_NODE_HPP
 
 # include <type_traits>
 # include <vector>
@@ -18,4 +18,4 @@ struct svd_node{};// this class must be POD class
 
 }}// end namespace nodamushi::svd
 
-#endif // __NODAMUSHI_SVD_NODE_HPP__
+#endif // NODAMUSHI_SVD_NODE_HPP

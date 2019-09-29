@@ -2,8 +2,8 @@
   @brief value attriubte
   @file vattr.hpp
 */
-#ifndef __NODAMUSHI_SVD_VATTR_HPP__
-#define __NODAMUSHI_SVD_VATTR_HPP__
+#ifndef NODAMUSHI_SVD_VATTR_HPP
+#define NODAMUSHI_SVD_VATTR_HPP
 
 # include <tuple>
 # include <type_traits>
@@ -54,4 +54,4 @@ struct vattr_unwrap<vattr<v,attributes...>>
 #include "nodamushi/svd/vattr/hex.hpp"
 
 
-#endif // __NODAMUSHI_SVD_VATTR_HPP__
+#endif // NODAMUSHI_SVD_VATTR_HPP

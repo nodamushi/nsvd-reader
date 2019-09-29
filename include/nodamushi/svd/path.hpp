@@ -2,8 +2,8 @@
   @brief svd element path
   @file path.hpp
 */
-#ifndef __NODAMUSHI_SVD_PATH_HPP__
-#define __NODAMUSHI_SVD_PATH_HPP__
+#ifndef NODAMUSHI_SVD_PATH_HPP
+#define NODAMUSHI_SVD_PATH_HPP
 
 # include <vector>
 # include <iterator>
@@ -336,4 +336,4 @@ ostream& operator <<(ostream& o,const ::nodamushi::svd::path<S>& p)
 }
 }
 
-#endif // __NODAMUSHI_SVD_PATH_HPP__
+#endif // NODAMUSHI_SVD_PATH_HPP

@@ -6,8 +6,8 @@
  * These codes are licensed under CC0.
  * http://creativecommons.org/publicdomain/zero/1.0/
  */
-#ifndef __NODAMUSHI_SVD_ADDRESSBLOCK_HPP__
-#define __NODAMUSHI_SVD_ADDRESSBLOCK_HPP__
+#ifndef NODAMUSHI_SVD_ADDRESSBLOCK_HPP
+#define NODAMUSHI_SVD_ADDRESSBLOCK_HPP
 
 # include "nodamushi/svd/elements.hpp"
 
@@ -78,4 +78,4 @@ template<>struct svd_printer<AddressBlock>{
 } // end namespace svd
 }// end namespace nodamushi
 
-#endif // __NODAMUSHI_SVD_ADDRESSBLOCK_HPP__
+#endif // NODAMUSHI_SVD_ADDRESSBLOCK_HPP

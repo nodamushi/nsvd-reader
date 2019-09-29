@@ -7,8 +7,8 @@
  * http://creativecommons.org/publicdomain/zero/1.0/
  */
 
-#ifndef __NODAMUSHI_SVD_VALUE_VOID_VALUE_HPP__
-#define __NODAMUSHI_SVD_VALUE_VOID_VALUE_HPP__
+#ifndef NODAMUSHI_SVD_VALUE_VOID_VALUE_HPP
+#define NODAMUSHI_SVD_VALUE_VOID_VALUE_HPP
 
 # include "nodamushi/svd/value.hpp"
 namespace nodamushi{
@@ -41,4 +41,4 @@ template<bool attribute,bool r,char... name>struct value<void,attribute,r,name..
 };
 }}// end namespace nodamushi::svd
 
-#endif // __NODAMUSHI_SVD_VALUE_VOID_VALUE_HPP__
+#endif // NODAMUSHI_SVD_VALUE_VOID_VALUE_HPP

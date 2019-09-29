@@ -6,8 +6,8 @@
  * These codes are licensed under CC0.
  * http://creativecommons.org/publicdomain/zero/1.0/
  */
-#ifndef __NODAMUSHI_SVD_SVD_READER_HPP__
-#define __NODAMUSHI_SVD_SVD_READER_HPP__
+#ifndef NODAMUSHI_SVD_SVD_READER_HPP
+#define NODAMUSHI_SVD_SVD_READER_HPP
 
 # include "nodamushi/const_string.hpp"
 # include "nodamushi/boxvec.hpp"
@@ -224,4 +224,4 @@ struct svd_reader_util
 
 }}// end namespace nodamushi::svd
 
-#endif // __NODAMUSHI_SVD_SVD_READER_HPP__
+#endif // NODAMUSHI_SVD_SVD_READER_HPP

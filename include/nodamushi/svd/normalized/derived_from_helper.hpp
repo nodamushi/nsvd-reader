@@ -7,8 +7,8 @@
  * http://creativecommons.org/publicdomain/zero/1.0/
  */
 
-#ifndef __NODAMUSHI_SVD_NORMALIZED_DERIVED_FROM_HELPER_HPP__
-#define __NODAMUSHI_SVD_NORMALIZED_DERIVED_FROM_HELPER_HPP__
+#ifndef NODAMUSHI_SVD_NORMALIZED_DERIVED_FROM_HELPER_HPP
+#define NODAMUSHI_SVD_NORMALIZED_DERIVED_FROM_HELPER_HPP
 
 # include <type_traits>
 # include <string>
@@ -156,4 +156,4 @@ template<typename T>struct unwrap_decltype
 
 }}}// end namespace nodamushi::svd::normalized
 
-#endif // __NODAMUSHI_SVD_NORMALIZED_DERIVED_FROM_HELPER_HPP__
+#endif // NODAMUSHI_SVD_NORMALIZED_DERIVED_FROM_HELPER_HPP

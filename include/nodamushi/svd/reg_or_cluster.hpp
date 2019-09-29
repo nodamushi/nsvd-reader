@@ -6,8 +6,8 @@
  * These codes are licensed under CC0.
  * http://creativecommons.org/publicdomain/zero/1.0/
  */
-#ifndef __NODAMUSHI_REGISTERORCLUSTER_HPP__
-#define __NODAMUSHI_REGISTERORCLUSTER_HPP__
+#ifndef NODAMUSHI_REGISTERORCLUSTER_HPP
+#define NODAMUSHI_REGISTERORCLUSTER_HPP
 
 # include <memory>
 # include <functional>
@@ -158,4 +158,4 @@ template<>struct register_cluster_selector<false>
 
 }} // end namespace nodamushi
 
-#endif // __NODAMUSHI_REGISTERORCLUSTER_HPP__
+#endif // NODAMUSHI_REGISTERORCLUSTER_HPP

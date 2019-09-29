@@ -11,8 +11,8 @@
 /*
  * TinyXML-2 license is zlib license.
  */
-#ifndef __NODAMUSHI_SVD_TINYXML_HPP__
-#define __NODAMUSHI_SVD_TINYXML_HPP__
+#ifndef NODAMUSHI_SVD_TINYXML_HPP
+#define NODAMUSHI_SVD_TINYXML_HPP
 
 # include "nodamushi/svd/svd_reader.hpp"
 # include <tinyxml2.h>

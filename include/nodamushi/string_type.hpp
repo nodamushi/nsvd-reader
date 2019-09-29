@@ -6,8 +6,8 @@
  * These codes are licensed under CC0.
  * http://creativecommons.org/publicdomain/zero/1.0/
  */
-#ifndef __NODAMUSHI_STRING_TYPE_HPP__
-#define __NODAMUSHI_STRING_TYPE_HPP__
+#ifndef NODAMUSHI_STRING_TYPE_HPP
+#define NODAMUSHI_STRING_TYPE_HPP
 
 # include <cstdint>
 # include <string>
@@ -61,6 +61,6 @@ void emplace_back_string(std::vector<std::string>& v,ITR itr,ITR_END end)
 
 } // end namespace nodamushi
 
-#endif // __NODAMUSHI_STRING_TYPE_HPP__
+#endif // NODAMUSHI_STRING_TYPE_HPP
 
 

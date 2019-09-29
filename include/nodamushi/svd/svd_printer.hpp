@@ -6,8 +6,8 @@
  * These codes are licensed under CC0.
  * http://creativecommons.org/publicdomain/zero/1.0/
  */
-#ifndef __NODAMUSHI_SVD_SVD_PRINTER_HPP__
-#define __NODAMUSHI_SVD_SVD_PRINTER_HPP__
+#ifndef NODAMUSHI_SVD_SVD_PRINTER_HPP
+#define NODAMUSHI_SVD_SVD_PRINTER_HPP
 
 # include <ostream>
 # include <type_traits>
@@ -54,4 +54,4 @@ std::string get_indent(int s)
 
 # include "nodamushi/svd/svd_printer/imple.hpp"
 
-#endif // __NODAMUSHI_SVD_SVD_PRINTER_HPP__
+#endif // NODAMUSHI_SVD_SVD_PRINTER_HPP

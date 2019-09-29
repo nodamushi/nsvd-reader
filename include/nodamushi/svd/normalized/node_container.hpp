@@ -6,8 +6,8 @@
  * These codes are licensed under CC0.
  * http://creativecommons.org/publicdomain/zero/1.0/
  */
-#ifndef __NODAMUSHI_SVD_NORMALIZED_NODE_CONTAINER_HPP__
-#define __NODAMUSHI_SVD_NORMALIZED_NODE_CONTAINER_HPP__
+#ifndef NODAMUSHI_SVD_NORMALIZED_NODE_CONTAINER_HPP
+#define NODAMUSHI_SVD_NORMALIZED_NODE_CONTAINER_HPP
 
 # include <vector>
 # include <memory>
@@ -316,4 +316,4 @@ template<typename STRREF,typename STR,typename V>
 struct normalizer;
 }}}
 
-#endif // __NODAMUSHI_SVD_NORMALIZED_NODE_CONTAINER_HPP__
+#endif // NODAMUSHI_SVD_NORMALIZED_NODE_CONTAINER_HPP

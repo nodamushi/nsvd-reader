@@ -7,8 +7,8 @@
  * http://creativecommons.org/publicdomain/zero/1.0/
  */
 
-#ifndef __NODAMUSHI_SVD_FIELD_HPP__
-#define __NODAMUSHI_SVD_FIELD_HPP__
+#ifndef NODAMUSHI_SVD_FIELD_HPP
+#define NODAMUSHI_SVD_FIELD_HPP
 
 # include "nodamushi/svd/elements.hpp"
 
@@ -229,4 +229,4 @@ __NX_SVD_HANDLE_VISIT(Field)
 } // end namespace svd
 }// end namespace nodamushi
 
-#endif // __NODAMUSHI_SVD_FIELD_HPP__
+#endif // NODAMUSHI_SVD_FIELD_HPP

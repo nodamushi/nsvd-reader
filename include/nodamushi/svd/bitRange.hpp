@@ -6,8 +6,8 @@
  * These codes are licensed under CC0.
  * http://creativecommons.org/publicdomain/zero/1.0/
  */
-#ifndef __NODAMUSHI_SVD_BITRANGE_HPP__
-#define __NODAMUSHI_SVD_BITRANGE_HPP__
+#ifndef NODAMUSHI_SVD_BITRANGE_HPP
+#define NODAMUSHI_SVD_BITRANGE_HPP
 
 # include <cstdint>
 # include <ostream>
@@ -127,4 +127,4 @@ inline ostream& operator<<(ostream& o,const nodamushi::svd::bitRange& r)
 }
 } // end namespace std
 
-#endif // __NODAMUSHI_SVD_BITRANGE_HPP__
+#endif // NODAMUSHI_SVD_BITRANGE_HPP

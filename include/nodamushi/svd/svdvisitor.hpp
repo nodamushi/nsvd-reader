@@ -82,8 +82,8 @@ struct my_visitor
  * These codes are licensed under CC0.
  * http://creativecommons.org/publicdomain/zero/1.0/
  */
-#ifndef __NODAMUSHI_SVD_SVDVISITOR_HPP__
-#define __NODAMUSHI_SVD_SVDVISITOR_HPP__
+#ifndef NODAMUSHI_SVD_SVDVISITOR_HPP
+#define NODAMUSHI_SVD_SVDVISITOR_HPP
 
 # include <type_traits>
 # include <cassert>
@@ -260,4 +260,4 @@ template<typename T1,typename T2>struct is_same
 } // end namespace svd
 }// end namespace nodamushi
 
-#endif // __NODAMUSHI_SVD_SVDVISITOR_HPP__
+#endif // NODAMUSHI_SVD_SVDVISITOR_HPP

@@ -7,8 +7,8 @@
  * http://creativecommons.org/publicdomain/zero/1.0/
  */
 
-#ifndef __NODAMUSHIMPLE_SVD_VALUE_IMPLE_HPP__
-#define __NODAMUSHIMPLE_SVD_VALUE_IMPLE_HPP__
+#ifndef NODAMUSHIMPLE_SVD_VALUE_IMPLE_HPP
+#define NODAMUSHIMPLE_SVD_VALUE_IMPLE_HPP
 
 # include <vector>
 # include <memory>
@@ -93,4 +93,4 @@ void value<T,attribute,required,name...>::clear()noexcept
 } // end namespace svd
 }// end namespace nodamushi
 
-#endif // __NODAMUSHIMPLE_SVD_VALUE_IMPLE_HPP__
+#endif // NODAMUSHIMPLE_SVD_VALUE_IMPLE_HPP

@@ -6,8 +6,8 @@
  * These codes are licensed under CC0.
  * http://creativecommons.org/publicdomain/zero/1.0/
  */
-#ifndef __NODAMUSHI_SVD_ACCESS_HPP__
-#define __NODAMUSHI_SVD_ACCESS_HPP__
+#ifndef NODAMUSHI_SVD_ACCESS_HPP
+#define NODAMUSHI_SVD_ACCESS_HPP
 
 #include <string>
 # if __cplusplus >= 201703
@@ -164,4 +164,4 @@ inline ostream& operator <<(std::ostream& os,const ::nodamushi::svd::Access& val
   return os;
 }
 }
-#endif //__NODAMUSHI_SVD_ACCESS_HPP__
+#endif //NODAMUSHI_SVD_ACCESS_HPP

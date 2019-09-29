@@ -7,8 +7,8 @@
  * http://creativecommons.org/publicdomain/zero/1.0/
  */
 
-#ifndef __NODAMUSHI_REFHASH_HPP__
-#define __NODAMUSHI_REFHASH_HPP__
+#ifndef NODAMUSHI_REFHASH_HPP
+#define NODAMUSHI_REFHASH_HPP
 # include <functional>
 
 namespace nodamushi{
@@ -73,4 +73,4 @@ template<typename T>struct refhash
 
 }// end namespace nodamushi
 
-#endif // __NODAMUSHI_REFHASH_HPP__
+#endif // NODAMUSHI_REFHASH_HPP

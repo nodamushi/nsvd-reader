@@ -6,8 +6,8 @@
  * These codes are licensed under CC0.
  * http://creativecommons.org/publicdomain/zero/1.0/
  */
-#ifndef __NODAMUSHI_SVD_DATATYPE_HPP__
-#define __NODAMUSHI_SVD_DATATYPE_HPP__
+#ifndef NODAMUSHI_SVD_DATATYPE_HPP
+#define NODAMUSHI_SVD_DATATYPE_HPP
 
 # include <cstdint>
 # include <algorithm>
@@ -212,4 +212,4 @@ inline ostream& operator <<(std::ostream& os,const ::nodamushi::svd::DataType& v
   return os;
 }
 }
-#endif //__NODAMUSHI_SVD_DATATYPE_HPP__
+#endif //NODAMUSHI_SVD_DATATYPE_HPP

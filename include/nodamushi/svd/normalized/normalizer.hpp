@@ -7,8 +7,8 @@
  * http://creativecommons.org/publicdomain/zero/1.0/
  */
 
-#ifndef __NODAMUSHI_SVD_NORMALIZED_NORMALIZER_HPP__
-#define __NODAMUSHI_SVD_NORMALIZED_NORMALIZER_HPP__
+#ifndef NODAMUSHI_SVD_NORMALIZED_NORMALIZER_HPP
+#define NODAMUSHI_SVD_NORMALIZED_NORMALIZER_HPP
 
 # include <vector>
 # include <memory>
@@ -845,4 +845,4 @@ normalize(const ::nodamushi::svd::Device<STR,V>& d)
 
 
 }}  // nodamushi::svd
-#endif // __NODAMUSHI_SVD_NORMALIZED_NORMALIZER_HPP__
+#endif // NODAMUSHI_SVD_NORMALIZED_NORMALIZER_HPP

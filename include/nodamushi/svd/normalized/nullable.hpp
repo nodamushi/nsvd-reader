@@ -2,8 +2,8 @@
   @brief optional like container
   @file nodamushi/svd/normalized/nullable.hpp
 */
-#ifndef __NODAMUSHI_SVD_NORMALIZE_NULLABLE_HPP__
-#define __NODAMUSHI_SVD_NORMALIZE_NULLABLE_HPP__
+#ifndef NODAMUSHI_SVD_NORMALIZE_NULLABLE_HPP
+#define NODAMUSHI_SVD_NORMALIZE_NULLABLE_HPP
 
 # include <utility>
 # include <type_traits>
@@ -83,4 +83,4 @@ struct nullable{
 
 }}}// end namespace nodamushi
 
-#endif // __NODAMUSHI_SVD_NORMALIZE_NULLABLE_HPP__
+#endif // NODAMUSHI_SVD_NORMALIZE_NULLABLE_HPP

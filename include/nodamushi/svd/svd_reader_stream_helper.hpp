@@ -2,8 +2,8 @@
   @brief svd_reader_stream_helper.hpp
   @file nodamushi/svd/svd_reader_stream_helper.hpp
 */
-#ifndef __NODAMUSHI_SVD_STREAM_HELPER_HPP__
-#define __NODAMUSHI_SVD_STREAM_HELPER_HPP__
+#ifndef NODAMUSHI_SVD_STREAM_HELPER_HPP
+#define NODAMUSHI_SVD_STREAM_HELPER_HPP
 
 namespace nodamushi{
 namespace svd{
@@ -324,4 +324,4 @@ struct stream_reader_base:public svd_reader
 };
 }}// end namespace nodamushi
 
-#endif // __NODAMUSHI_SVD_STREAM_HELPER_HPP__
+#endif // NODAMUSHI_SVD_STREAM_HELPER_HPP

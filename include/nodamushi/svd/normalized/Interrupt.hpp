@@ -6,8 +6,8 @@
  * These codes are licensed under CC0.
  * http://creativecommons.org/publicdomain/zero/1.0/
  */
-#ifndef __NODAMUSHI_SVD_NORMALIZED_INTERRUPT_HPP__
-#define __NODAMUSHI_SVD_NORMALIZED_INTERRUPT_HPP__
+#ifndef NODAMUSHI_SVD_NORMALIZED_INTERRUPT_HPP
+#define NODAMUSHI_SVD_NORMALIZED_INTERRUPT_HPP
 
 # include <cstdint>
 
@@ -39,4 +39,4 @@ template<typename STRREF>struct Interrupt
 
 }}} // end namespace svd
 
-#endif // __NODAMUSHI_SVD_NORMALIZED_INTERRUPT_HPP__
+#endif // NODAMUSHI_SVD_NORMALIZED_INTERRUPT_HPP

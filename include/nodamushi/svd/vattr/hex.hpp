@@ -6,8 +6,8 @@
  * These codes are licensed under CC0.
  * http://creativecommons.org/publicdomain/zero/1.0/
  */
-#ifndef __NODAMUSHI_SVD_VATTR_HEX_HPP__
-#define __NODAMUSHI_SVD_VATTR_HEX_HPP__
+#ifndef NODAMUSHI_SVD_VATTR_HEX_HPP
+#define NODAMUSHI_SVD_VATTR_HEX_HPP
 
 # include <type_traits>
 # include "nodamushi/svd/vattr.hpp"
@@ -40,4 +40,4 @@ using hex8  = vattr<uint8_t,hex>;
 } // end namespace svd
 }// end namespace nodamushi
 
-#endif // __NODAMUSHI_SVD_HEX_NODAMUSHI_VATTR_SVD_HPP__
+#endif // NODAMUSHI_SVD_HEX_NODAMUSHI_VATTR_SVD_HPP

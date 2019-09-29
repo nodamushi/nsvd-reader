@@ -6,8 +6,8 @@
  * These codes are licensed under CC0.
  * http://creativecommons.org/publicdomain/zero/1.0/
  */
-#ifndef __NODAMUSHI_CONST_STRING_HPP__
-#define __NODAMUSHI_CONST_STRING_HPP__
+#ifndef NODAMUSHI_CONST_STRING_HPP
+#define NODAMUSHI_CONST_STRING_HPP
 
 # include <cstdint>
 # include <string>
@@ -135,4 +135,4 @@ template<char... chars>struct template_text
 } // end namespace details
 } // end namespace nodamushi
 
-#endif // __NODAMUSHI_CONST_STRING_HPP__
+#endif // NODAMUSHI_CONST_STRING_HPP

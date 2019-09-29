@@ -6,8 +6,8 @@
  * These codes are licensed under CC0.
  * http://creativecommons.org/publicdomain/zero/1.0/
  */
-#ifndef __NODAMUSHI_SVD_CLUSTER_HPP__
-#define __NODAMUSHI_SVD_CLUSTER_HPP__
+#ifndef NODAMUSHI_SVD_CLUSTER_HPP
+#define NODAMUSHI_SVD_CLUSTER_HPP
 
 # include "nodamushi/svd/elements.hpp"
 
@@ -314,4 +314,4 @@ __NX_SVD_HANDLE_VISIT(Cluster)
 
 } // end namespace svd
 }// end namespace nodamushi
-#endif // __NODAMUSHI_SVD_CLUSTER_HPP__
+#endif // NODAMUSHI_SVD_CLUSTER_HPP

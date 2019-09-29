@@ -2,8 +2,8 @@
   @brief elements header file
   @file nodamushi/svd/elements.hpp
 */
-#ifndef __NODAMUSHI_SVD_ELEMENTS_HPP__
-#define __NODAMUSHI_SVD_ELEMENTS_HPP__
+#ifndef NODAMUSHI_SVD_ELEMENTS_HPP
+#define NODAMUSHI_SVD_ELEMENTS_HPP
 
 #include <ostream>
 #include <vector>
@@ -50,4 +50,4 @@
 #include "nodamushi/svd/Device.hpp"
 
 
-#endif // __NODAMUSHI_SVD_ELEMENTS_HPP__
+#endif // NODAMUSHI_SVD_ELEMENTS_HPP

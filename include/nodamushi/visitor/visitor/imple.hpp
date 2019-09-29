@@ -6,8 +6,8 @@
  * These codes are licensed under CC0.
  * http://creativecommons.org/publicdomain/zero/1.0/
  */
-#ifndef __NODAMUSHI_VISITOR_IMPLE_HPP__
-#define __NODAMUSHI_VISITOR_IMPLE_HPP__
+#ifndef NODAMUSHI_VISITOR_IMPLE_HPP
+#define NODAMUSHI_VISITOR_IMPLE_HPP
 
 # include <type_traits>
 # include <vector>
@@ -324,4 +324,4 @@ result applyPostVisit(T& t,VISITOR& v)
 } // end namespace visitor
 }// end namespace nodamushi
 
-#endif // __NODAMUSHI_VISITOR_IMPLE_HPP__
+#endif // NODAMUSHI_VISITOR_IMPLE_HPP

@@ -6,8 +6,8 @@
  * These codes are licensed under CC0.
  * http://creativecommons.org/publicdomain/zero/1.0/
  */
-#ifndef __NODAMUSHI_SVD_MODIFIEDWRITEVALUES_HPP__
-#define __NODAMUSHI_SVD_MODIFIEDWRITEVALUES_HPP__
+#ifndef NODAMUSHI_SVD_MODIFIEDWRITEVALUES_HPP
+#define NODAMUSHI_SVD_MODIFIEDWRITEVALUES_HPP
 
 # include <string>
 # if __cplusplus >= 201703
@@ -200,4 +200,4 @@ inline ostream& operator <<(ostream& os,const ::nodamushi::svd::ModifiedWriteVal
   return os;
 }
 }
-#endif //__NODAMUSHI_MODIFIEDWRITEVALUES_HPP__
+#endif //NODAMUSHI_MODIFIEDWRITEVALUES_HPP

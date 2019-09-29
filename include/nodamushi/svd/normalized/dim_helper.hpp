@@ -2,8 +2,8 @@
   @brief name%s,dispalyName%s->name0,displayName1
   @file nodamushi/svd/normalized/dim_helper.hpp
 */
-#ifndef __NODAMUSHI_SVD_NORMALIZED_DIM_HELPER_HPP__
-#define __NODAMUSHI_SVD_NORMALIZED_DIM_HELPER_HPP__
+#ifndef NODAMUSHI_SVD_NORMALIZED_DIM_HELPER_HPP
+#define NODAMUSHI_SVD_NORMALIZED_DIM_HELPER_HPP
 
 # include "nodamushi/svd/dim_type.hpp"
 # include "nodamushi/svd/normalized/dim_info.hpp"
@@ -169,4 +169,4 @@ size_t calcChildrenSize(const NODELIST& list)
 
 }}}// end namespace nodamushi
 
-#endif // __NODAMUSHI_SVD_NORMALIZED_DIM_HELPER_HPP__
+#endif // NODAMUSHI_SVD_NORMALIZED_DIM_HELPER_HPP
