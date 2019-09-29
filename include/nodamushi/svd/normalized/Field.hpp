@@ -37,7 +37,7 @@ template<typename STRREF>struct Field
   using Enumeration = ::nodamushi::svd::normalized::Enumeration<STRREF>;
 
   using p_ptr = parent_ptr<Register>;
-  
+
 
 private:
   p_ptr parent;
@@ -69,7 +69,7 @@ public:
   nullable<ReadAction>          readAction;
   /**
     @brief &lt;enumeratedValues&gt; list
-    Enumeration class does not prohibit copying, 
+    Enumeration class does not prohibit copying,
     but basically it should be treated with a reference.
     @code
     auto& e = field.enemeratedValues[0];
@@ -87,7 +87,7 @@ public:
    * @return bit.msb()
    */
   unsigned int msb()const{return bit.msb();}
-  
+
   /**
     @brief get parent register pointer
     @return parent register pointer
@@ -126,6 +126,7 @@ public:
     }
     return 0;
   }
+
   //-------------------------------------------
   /**
    * @brief find path element
@@ -149,8 +150,20 @@ public:
     }
     return {};
   }
+  //-----------------------------------------------------------------
+
+  /**
+   * @brief create new enumeration
+   */
+  Enumeration& new_enumeratedValues()
+  {
+    size_t s = enumeratedValues;
+    enumeratedValues.emplace_back();
+    return enumeratedValues[s];
+  }
 
   //-----------------------------------------------------------------
+  Field()=default;
   /**
    * @param T pre normalized Field
    */
@@ -171,14 +184,21 @@ public:
     for(const auto& c:n.enumeratedValues)
       enumeratedValues.emplace_back(c);
   }
-  
+
   void update_parent(p_ptr& new_parent,node_ptr<this_t>& me)
   {
     parent = new_parent;
   }
   //! @brief allways return nullptr
   constexpr void* get_parent2()const noexcept{return nullptr;}
-  
+
+
+  void sort()
+  {
+    for(auto& e:enumeratedValues)
+      e.sort();
+  }
+
 };
 //---------- Visitor --------------------
 __NX_NORM_HANDLE_VISIT(Field)

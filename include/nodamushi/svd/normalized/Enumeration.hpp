@@ -43,7 +43,7 @@ template<typename STRREF>struct Enumeration
   Enumeration(const Enumeration&)=default;
 
   template<typename T>
-  Enumeration(const T& n): // don't change name 
+  Enumeration(const T& n): // don't change name
       name(n.name),
       __NORMALIZED_DERIVED_FROM(headerEnumName),
       __NORMALIZED_DERIVED_FROM(usage),
@@ -56,21 +56,32 @@ template<typename STRREF>struct Enumeration
       d.reserve(v.size());
       for(const auto& c:v)
         d.emplace_back(c);
+      sort();
     }
   }
+
   //--------------------------------------------------------------
+  /**
+   * @brief sort enumeratedValue by enumratedValue.value.
+   * @note enumratedValue whose isDefault member is true will be last
+   */
+  void sort()
+  {
+    std::sort(enumeratedValue.begin(),enumeratedValue.end());
+  }
+
   /**
    * @brief &lt;enumeratedValue&gt; is empty
    * @return &lt;enumeratedValue&gt; is empty
    */
   bool empty()const noexcept{return enumeratedValue.empty();}
   /**
-   * @brief count of &lt;enumeratedValue&gt; 
+   * @brief count of &lt;enumeratedValue&gt;
    * @return count of &lt;enumeratedValue&gt;
    */
   size_t size()const noexcept{return enumeratedValue.size();}
   /**
-   * @brief count of &lt;enumeratedValue&gt; 
+   * @brief count of &lt;enumeratedValue&gt;
    * @return count of &lt;enumeratedValue&gt;
    */
   size_t length()const noexcept{return enumeratedValue.size();}

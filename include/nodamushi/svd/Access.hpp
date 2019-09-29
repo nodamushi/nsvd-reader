@@ -22,6 +22,8 @@ namespace svd{
 /**
  * @brief Read/Write Access type enum.&lt;access&gt;
  * Read-Write/Read-Only/Write-Only/Write-Once/Read- Write Once
+ * @see is_writable()
+ * @see is_readable()
  */
 enum class Access
 {
@@ -36,6 +38,21 @@ enum class Access
   //! @brief read-writeOnce
   READ_WRITE_ONCE,
 };
+
+/**
+ * @brief when access is writable ,return true.
+ */
+inline constexpr bool is_writable(Access access)
+{
+  return access != Access::READ_ONLY;
+}
+/**
+ * @brief when access is readable ,return true.
+ */
+inline constexpr bool is_readable(Access access)
+{
+  return access != Access::WRITE_ONLY && access != Access::WRITE_ONCE;
+}
 
 //-------------------------------------------------------------
 

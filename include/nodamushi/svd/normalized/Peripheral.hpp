@@ -82,7 +82,7 @@ template<typename STRREF>struct Peripheral
   STRREF                      disableCondition;
   //! @brief base address
   uint64_t                    baseAddress;
-  /** 
+  /**
    * @brief &lt;size&gt;
    * @see get_size()
    */
@@ -114,11 +114,11 @@ template<typename STRREF>struct Peripheral
     @note This element does not inherit information from derivedFrom.
    */
   std::vector<Interrupt>      interrupt;
-  
+
   /**
     @brief &lt;cluster&gt; elements list.This list is sorted by the addressOffset.
     @par
-    Cluster class does not prohibit copying, 
+    Cluster class does not prohibit copying,
     but basically it should be treated with a reference.
     @code
     auto& c = parent.clusters[x];
@@ -128,7 +128,7 @@ template<typename STRREF>struct Peripheral
   /*!
     @brief &lt;register&gt; elements list.This list is sorted by the addressOffset.
     @par
-    Register class does not prohibit copying, 
+    Register class does not prohibit copying,
     but basically it should be treated with a reference.
     @code
     auto& r = parent.registers[x];
@@ -223,7 +223,7 @@ template<typename STRREF>struct Peripheral
   }
 
   //-------------------------------------------
-  
+
   /*!
    * @brief  prependToName or appendToName is not empty
    */
@@ -293,7 +293,7 @@ template<typename STRREF>struct Peripheral
   {
     if(n.svd.derivedFrom)
       derivedFrom = *n.svd.derivedFrom;
-    
+
     // add dim offset
     if(n.dim&& n.dim.index!=0){
       __NORMALIZED_DERIVED_FROM_HELPER(dimIncrement);
@@ -307,7 +307,7 @@ template<typename STRREF>struct Peripheral
     // addressBlock
     //----------------------------------------
     size_t addrBlockSize = 0;
-    
+
     if(n.svd.addressBlock)
       addrBlockSize = n.svd.addressBlock.get().size();
 
@@ -362,7 +362,7 @@ template<typename STRREF>struct Peripheral
     registers.sort([](const Register& a,const Register& b)->bool
                    {return a.addressOffset < b.addressOffset;});
   }
-  
+
   //! @brief always return nullptr
   constexpr void* get_parent2()const noexcept{return nullptr;}
 
@@ -371,6 +371,27 @@ template<typename STRREF>struct Peripheral
     parent = new_parent;
     update_parent_of_children(clusters,me);
     update_parent_of_children(registers,me);
+  }
+
+  void sort()
+  {
+    std::sort(registers.ptr_begin(),registers.ptr_end(),
+              [](auto x,auto y){
+                const auto xa = x->addressOffset;
+                const auto ya = y->addressOffset;
+                return xa < ya;
+              });
+
+    std::sort(clusters.ptr_begin(),clusters.ptr_end(),
+              [](auto x,auto y){
+                const auto xa = x->addressOffset;
+                const auto ya = y->addressOffset;
+                return xa < ya;
+              });
+    for(auto& r:registers)
+      r.sort();
+    for(auto& c:clusters)
+      c.sort();
   }
 
 };

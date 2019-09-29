@@ -1,5 +1,5 @@
 /*!
-  @brief normalized register 
+  @brief normalized register
   @file nodamushi/svd/normalized/Register.hpp
 */
 /*
@@ -20,9 +20,9 @@ namespace normalized{
 
 /*
  * Normalized register class.
- * if STRREF is string_view or something like it, 
+ * if STRREF is string_view or something like it,
  *  the reference source of string is the value of  nodamushi::svd::Register instance member.
- * 
+ *
  * @see http://www.keil.com/pack/doc/CMSIS/SVD/html/elem_registers.html#elem_register
  */
 
@@ -56,7 +56,7 @@ public:
   //! @brief &lt;alternateGroup&gt;
   STRREF               alternateGroup;
   //! @brief &lt;alternateRegister&gt;
-  STRREF               alternateRegister;  
+  STRREF               alternateRegister;
   /**
     @brief &lt;addressOffset&gt;
     @par
@@ -105,7 +105,7 @@ public:
   WriteConstraint      writeConstraint;
   /*!
     @brief &lt;field&gt; elements list. This list is sorted by lsb of field.
-    Field class does not prohibit copying, 
+    Field class does not prohibit copying,
     but basically it should be treated with a reference.
     @code
     auto& f = reg.fields[x];
@@ -149,14 +149,14 @@ public:
     }
     return name;
   }
-             
-             
-  
+
+
+
   /**
     @brief get parent cluster pointer
     @return parent peripheral pointer or nullptr.
     @see get_parent2()
-  */           
+  */
   node_ptr<Peripheral> get_parent() noexcept{return parent.lock();}
   //! @return parent peripheral pointer or nullptr.
   node_ptr<Peripheral const> get_parent()const noexcept{return parent.lock();}
@@ -308,6 +308,20 @@ public:
     parent2= new_parent;
     parent = {};
     update_parent_of_children(fields,me);
+  }
+  /**
+   * @brief sort field by lsb, and call Field.sort
+   */
+  void sort()
+  {
+    std::sort(fields.ptr_begin(),fields.ptr_end(),
+              [](auto x,auto y){
+                const auto lsbx = x->lsb();
+                const auto lsby = y->lsb();
+                return lsbx < lsby;
+              });
+    for(auto& f:fields)
+      f.sort();
   }
 
 };

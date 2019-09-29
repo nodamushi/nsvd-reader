@@ -29,14 +29,14 @@ namespace normalized{
  * //
  * // normalize device.
  * // the result pointer is wrapped by shared_ptr.
- * // 
- * norm::node_ptr<Device<>> ptr = svd::normalize(device); 
+ * //
+ * norm::node_ptr<Device<>> ptr = svd::normalize(device);
  * std::cout << ptr->peripheral[0].name << std::endl;
  * @endcode
  * @param STRREF string type.
- * @par 
+ * @par
  * In C++14, the default text type is 'std::string'.
- * In C++17, the default text type is 'std::string_view'. 
+ * In C++17, the default text type is 'std::string_view'.
  * std::string_view refers to the string of svd::Device.
  *
  * @see http://www.keil.com/pack/doc/CMSIS/SVD/html/elem_device.html
@@ -89,14 +89,14 @@ template<typename STRREF>struct Device
 
   /*!
     @brief peripheral list
-    Peripheral class does not prohibit copying, 
+    Peripheral class does not prohibit copying,
     but basically it should be treated with a reference.
     @code
     auto& p = device->peripherals[0];
     @endcode
    */
   list<Peripheral> peripherals;
-  
+
   //----------------------------------------------------------
   /**
    * @brief find path element
@@ -178,7 +178,7 @@ template<typename STRREF>struct Device
     ::nodamushi::svd::path<> pa(p);
     return find_cluster(pa);
   }
-  
+
   /**
    * @brief find register
    * @param p path
@@ -204,7 +204,7 @@ template<typename STRREF>struct Device
     ::nodamushi::svd::path<> pa(p);
     return find_register(pa);
   }
-  
+
   /**
    * @brief find field
    * @param p path
@@ -230,7 +230,7 @@ template<typename STRREF>struct Device
     ::nodamushi::svd::path<> pa(p);
     return find_field(pa);
   }
-  
+
   //----------------------------------------------------------
   /**
    * @brief Don't use this constructor.this constructor is for normalizer class.
@@ -259,8 +259,9 @@ template<typename STRREF>struct Device
   {
     for(const auto& p:n.peripherals)
       peripherals.emplace_back(p);
+    sort();
   }
-  
+
   /**
    * set this object pointer.
    */
@@ -270,6 +271,23 @@ template<typename STRREF>struct Device
       update_parent_of_children(peripherals, this_ptr);
     }
   }
+  /**
+   * @brief sort by address
+   */
+  void sort()
+  {
+    std::sort(peripherals.ptr_begin(),peripherals.ptr_end(),
+              [](auto x,auto y){
+                const auto xa = x->baseAddress;
+                const auto ya = y->baseAddress;
+                return xa < ya;
+              });
+
+    for(auto& p:peripherals)
+      p.sort();
+  }
+
+
   //! @brief allways return 0
   uint64_t get_address()const{return 0;}
   //! @brief return size

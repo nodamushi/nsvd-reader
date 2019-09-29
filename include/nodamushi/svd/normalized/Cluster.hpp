@@ -17,9 +17,9 @@ namespace normalized{
 
 /*
  * @brief Normalized cluster class.
- * if STRREF is string_view or something like it, 
+ * if STRREF is string_view or something like it,
  *  the reference source of string is the value of  nodamushi::svd::Cluster instance member.
- * 
+ *
  * @see http://www.keil.com/pack/doc/CMSIS/SVD/html/elem_registers.html#elem_cluster
  * @see nodamushi::svd::Cluster
  */
@@ -47,20 +47,20 @@ public:
   dim_info               dim;
   //! @brief &lt;description&gt;
   STRREF                 description;
-  /*! 
+  /*!
     @brief &lt;alternateCluster&gt;
   */
   STRREF                 alternateCluster;
   //! @brief &lt;headerStructName&gt;
   STRREF                 headerStructName;
-  /*! 
+  /*!
     @brief &lt;addressOffset&gt;.
     @par
     If you nead an absolute address, call the get_address() method.
     If you nead a relative address from the baseAddress of peripheral,call the get_offset() method.
 
     @note
-    Although the CMSIS-SVD document describes the addressOffset as a relative address from the baseAddress of peripheral, it is probably wrong. 
+    Although the CMSIS-SVD document describes the addressOffset as a relative address from the baseAddress of peripheral, it is probably wrong.
     In this library, the addressOffset is treated as a relative path from the parent address.
     The parent is a peripheral or a cluster.
 
@@ -68,7 +68,7 @@ public:
     @see get_address_offset()
    */
   uint64_t               addressOffset;
-  
+
   /*!
     @brief &lt;size&gt; default bit-width of registers.
     @see get_size()
@@ -98,7 +98,7 @@ public:
   /*!
     @brief &lt;cluster&gt; elements list. This list is sorted by the addressOffset.
     @par
-    Cluster class does not prohibit copying, 
+    Cluster class does not prohibit copying,
     but basically it should be treated with a reference.
     @code
     auto& c = parent.clusters[x];
@@ -109,12 +109,12 @@ public:
     @brief &lt;register&gt; elements list. This list is sorted by the addressOffset.
 
     @par
-    Register class does not prohibit copying, 
+    Register class does not prohibit copying,
     but basically it should be treated with a reference.
     @code
     auto& r = parent.registers[x];
     @endcode
-   */  
+   */
   list<Register>         registers;
   //-----------------------------------------------------------
   /*!
@@ -147,7 +147,7 @@ public:
   node_ptr<Peripheral const> get_peripheral()const noexcept{return find_parent_peripheral(*this);}
   //! @brief get the Peripheral to which this cluster belongs.
   node_ptr<Peripheral> get_peripheral()noexcept{return find_parent_peripheral(*this);}
-  
+
   /**
      @brief calculate an absolute address.
      @return an absolute address
@@ -174,7 +174,7 @@ public:
   //! @brief resolve the value of protection and return it.
   Protection get_protection()const{
     return protection.get<this_t,get_default_protection<this_t>>(this);
-  }  
+  }
   //-------------------------------------------
   /**
    * @brief find path element
@@ -275,7 +275,7 @@ public:
    * @param T pre normalized Cluster
    */
   template<typename T>
-  Cluster(const T& n):// 'n' don't change name 
+  Cluster(const T& n):// 'n' don't change name
       parent(),
       parent2(),
       derivedFrom(),
@@ -315,8 +315,8 @@ public:
                    {return a.addressOffset < b.addressOffset;});
 
   }
-  /** 
-    @brief set the peripheral parent 
+  /**
+    @brief set the peripheral parent
     @param new_parent peripheral parent pointer
     @param me this instance pointer
    */
@@ -328,8 +328,8 @@ public:
     update_parent_of_children(registers,me);
   }
 
-  /** 
-    @brief set the cluster parent 
+  /**
+    @brief set the cluster parent
     @param new_parent cluster parent pointer
     @param me this instance pointer
    */
@@ -339,6 +339,27 @@ public:
     parent = {};
     update_parent_of_children(clusters,me);
     update_parent_of_children(registers,me);
+  }
+
+  void sort()
+  {
+    std::sort(registers.ptr_begin(),registers.ptr_end(),
+              [](auto x,auto y){
+                const auto xa = x->addressOffset;
+                const auto ya = y->addressOffset;
+                return xa < ya;
+              });
+
+    std::sort(clusters.ptr_begin(),clusters.ptr_end(),
+              [](auto x,auto y){
+                const auto xa = x->addressOffset;
+                const auto ya = y->addressOffset;
+                return xa < ya;
+              });
+    for(auto& r:registers)
+      r.sort();
+    for(auto& c:clusters)
+      c.sort();
   }
 
 };
