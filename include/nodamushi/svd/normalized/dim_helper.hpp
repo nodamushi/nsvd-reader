@@ -23,7 +23,7 @@ size_t get_dim_count(const NODE& n){
 }
 
 /**
- * @brief replacing %s process support 
+ * @brief replacing %s process support
  */
 template<typename STR>struct dim_name_helper
 {
@@ -49,32 +49,21 @@ template<typename STR>struct dim_name_helper
 
     // not array,seq
     if(p == find_npos)return;
-      
+
     auto size = s.size();
-    
+
     // not array
-    if(s[size-1] != ']'){
+    if(s[size-1] != ']' || p == 0){
       type = dim_type::SEQ;
       first_end = p;
       second_begin = p+2;
       return;
     }
 
-    size_t i = size -2;
+    size_t i = p-1;
     // skip space
     while(i != 0 && (s[i] == ' ' || s[i] == '\t')) --i;
-    
-    // %s ?
-    if(i < 3 || s[i-1] != '%' || s[i] != 's' ){
-      // seq
-      type = dim_type::SEQ;
-      first_end = p;
-      second_begin = p+2;
-    }
-    i-=2;// %s
-    // skip space
-    while(i != 0 && (s[i] == ' ' || s[i] == '\t')) --i;
-    
+
     if(s[i] == '['){
       type = dim_type::ARRAY;
       first_end = i+1;
@@ -90,9 +79,9 @@ template<typename STR>struct dim_name_helper
   is_seq()const noexcept{return type == dim_type::SEQ;}
 
   std::string operator()(size_t index)const{
-    if(!str || first_end == 0)return "";
+    if(!str)return "";
     if(type == dim_type::NON){
-      return std::string(*str);// TODO
+      return std::string(*str);// TODO: return same object
     }
     const std::string& n = *str;
     std::string s =  n.substr(0,first_end);
@@ -135,11 +124,11 @@ struct dim_helper
 
   size_t size;
   size_t data_byte_size;
-  
+
   dim_info get_base_info(){
     return {name.type,0,size,0};
   }
-  
+
   dim_helper(const NODE& n):
       node(n),
       name(n, (n.name? &n.name.get() : nullptr) ),
@@ -147,7 +136,7 @@ struct dim_helper
       data_byte_size(
           (n.dimIncrement && n.dimIncrement.get() > 0)?n.dimIncrement.get() : 1)
   {}
-  
+
   operator bool()const noexcept{return name.type != dim_type::NON;}
   is_array()const noexcept{return name.type == dim_type::ARRAY;}
   is_seq()const noexcept{return name.type == dim_type::SEQ;}

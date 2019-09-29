@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<device schemaVersion="1.1" xmlns:xs="http://www.w3.org/2001/XMLSchema-instance" xs:noNamespaceSchemaLocation="CMSIS-SVD.xsd" >
+  <vendor>nodamushi</vendor>
+  <vendorID>nodamushi</vendorID>
+  <name>sample</name>
+  <series>nodamushi test</series>
+  <version>1.0</version>
+  <description>Sample SVD for test</description>
+  <cpu>
+    <name>CM4</name>
+    <revision>r1p0</revision>
+    <endian>little</endian>
+    <mpuPresent>true</mpuPresent>
+    <fpuPresent>false</fpuPresent>
+    <nvicPrioBits>3</nvicPrioBits>
+    <vendorSystickConfig>false</vendorSystickConfig>
+  </cpu>
+  <addressUnitBits>8</addressUnitBits>
+  <width>32</width>
+  <size>32</size>
+  <access>read-write</access>
+  <resetValue>0x00000000</resetValue>
+  <resetMask>0xFFFFFFFF</resetMask>
+
+  <peripherals>
+
+    <peripheral>
+      <name>A</name>
+      <baseAddress>0x40000000</baseAddress>
+
+      <addressBlock>
+        <offset>0</offset>
+        <size>0x100</size>
+        <usage>registers</usage>
+      </addressBlock>
+
+
+      <registers>
+        <register>
+          <!-- A0,A1,A2 -->
+          <name>A%s</name>
+          <displayName>AReg%s</displayName>
+          <dim>3</dim>
+          <dimIncrement>4</dimIncrement>
+          <addressOffset> 0 </addressOffset>
+          <fields>
+            <field>
+              <!-- F0,F1,F2 -->
+              <name>F%s</name>
+              <dim>3</dim>
+              <dimIncrement>4</dimIncrement>
+              <lsb>0</lsb>
+              <msb>2</msb>
+            </field>
+          </fields>
+        </register>
+
+
+        <register>
+          <!-- B[0],B[1],B[2] -->
+          <name>B[%s]</name>
+          <displayName>BReg%s</displayName>
+          <dim>3</dim>
+          <dimIncrement>4</dimIncrement>
+          <addressOffset> 12 </addressOffset>
+          <fields>
+            <field>
+              <!-- Foo,Bar,Piyo -->
+              <name>%s</name>
+              <dim>3</dim>
+              <dimIncrement>4</dimIncrement>
+              <dimIndex> Foo, Bar, Piyo </dimIndex>
+              <lsb>0</lsb>
+              <msb>2</msb>
+            </field>
+          </fields>
+        </register>
+
+        <register>
+          <!-- C1,C2,C3,C4,C5,C10,C11,C12,C13,C14 -->
+          <name>C%s</name>
+          <displayName>CReg%s</displayName>
+          <dim>10</dim>
+          <dimIncrement>4</dimIncrement>
+          <dimIndex> 1-5,10-15 </dimIndex>
+          <addressOffset> 24 </addressOffset>
+
+          <fields>
+            <field>
+              <!-- AFooB,ABarB,APiyoB -->
+              <name>A%sB</name>
+              <dim>3</dim>
+              <dimIncrement>4</dimIncrement>
+              <dimIndex> Foo, Bar, Piyo </dimIndex>
+              <lsb>0</lsb>
+              <msb>2</msb>
+            </field>
+          </fields>
+
+        </register>
+      </registers>
+    </peripheral>
+
+  </peripherals>
+</device>
